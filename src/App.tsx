@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Footer from './Components/Footer';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-full bg-slate-800">
+      <div className="flex flex-col min-h-screen">
+        <p className="flex-grow text-center text-4xl text-white"> Sean Murray - Full Stack Developer</p>
+        <Footer />
+      </div>
     </div>
   );
 }
