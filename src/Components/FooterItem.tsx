@@ -11,7 +11,7 @@ export interface FooterItemProps {
 
 const FooterItem: React.FC<FooterItemProps> = ({ name, link, icon, ...props }) => {
     return (
-        <div className="text-sm text-emerald-200 font-bold mb-2">
+        <div className="text-sm text-p font-bold mb-2 hover:text-p-hov">
             <a href={link} target="_blank">
                 <FontAwesomeIcon icon={icon} size="3x"/>
             </a>

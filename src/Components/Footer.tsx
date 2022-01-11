@@ -25,9 +25,9 @@ const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="footer relative pt-1 border-b-2 border-emerald-200">
+        <footer className="footer relative pt-1 border-b-2 border-p">
             <div className="container mx-auto px-6">
-                <div className="mt-16 border-t-2 border-gray-200">
+                <div className="mt-16 border-t-2 border-fg">
                     <div className="flex justify-evenly px-3 py-3">
                         {footerItems.map((item) =>
                             <FooterItem key={item.name} name={item.name} link={item.link} icon={item.icon} />
