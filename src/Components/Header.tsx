@@ -40,10 +40,10 @@ const Header: React.FC = () => {
     return (
         <header className="header relative border-t-2 border-p">
             <div className="container mx-auto flex flex-row justify place-content-between py-3 border-b-2 border-fg">
-                <div className='flex justify-start text-2xl text-white mx-10'>
+                <div className='flex justify-start text-2xl font-bold text-white mx-10'>
                     Sean Murray
                 </div>
-                <div className=" flex justify-end">
+                <div className=" flex items-center ">
                     {headerItems.map(item =>
                         <div className="text-p px-3 hover:text-p-hov">
                             <HeaderItem name={item.name} link={item.link} featured={item.featured}/>
