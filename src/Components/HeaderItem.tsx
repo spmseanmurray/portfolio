@@ -8,7 +8,7 @@ export interface HeaderItemProps {
 
 const HeaderItem: React.FC<HeaderItemProps> = ({ name, link, featured, ...props }) => {
     return (
-        <div className={`text-p font-bold hover:text-p-hov ${featured ? 'border-p px-3 border-2 rounded-md hover:border-p-hov': ''}`}>
+        <div className={`text-slate-100 font-bold hover:text-slate-400 ${featured ? '': ''}`}>
             <a href={link}>
                 {name}
             </a>

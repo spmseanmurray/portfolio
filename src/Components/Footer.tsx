@@ -1,7 +1,7 @@
 import React from 'react';
 import FooterItem, { FooterItemProps } from './FooterItem';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 const Footer: React.FC = () => {
@@ -25,14 +25,20 @@ const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="footer relative pt-1 border-b-2 border-p">
+        <footer className="footer relative">
             <div className="container mx-auto px-6">
-                <div className="mt-16 border-t-2 border-fg">
-                    <div className="flex justify-evenly px-3 py-3">
+                <div className="border-t-2 border-slate-500">
+                    <div className="flex justify-evenly px-3 pt-3">
                         {footerItems.map((item) =>
                             <FooterItem key={item.name} name={item.name} link={item.link} icon={item.icon} />
                         )}
                     </div>
+                </div>
+                <div className='flex justify-center'>
+                    <div className='text-slate-200 mr-3'>
+                        Sean Murray
+                    </div>
+                    <div className='text-sky-300 text-sm my-auto'>&copy; 2022</div>
                 </div>
             </div>
         </footer>
