@@ -4,7 +4,7 @@ import { faArrowAltCircleDown } from '@fortawesome/free-regular-svg-icons';
 
 const Landing: React.FC = () => {
     return (
-        <div className=" flex flex-col items-center justify-center h-screen">
+        <div className=" flex flex-col items-center justify-center mx-14 h-screen">
             <div className="text-6xl font-bold text-sky-300">
                 SEAN MURRAY
             </div>

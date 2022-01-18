@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Projects from './Components/Projects';
 import About from './Components/About';
+import Skills from './Components/Skills';
 
 const App: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
         <div className='my-auto'>
-          <About />
+          <Skills />
         </div>
         <Footer />
       </div>
