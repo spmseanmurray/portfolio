@@ -5,7 +5,7 @@ const About: React.FC = () => {
     return (
         
         <div className="flex justify-center ">
-            <div className="flex flex-col md:flex-row space-x-4 space-y-4 p-4 m-4 items-center border-2 border-slate-600 rounded-2xl">
+            <div className="flex flex-col md:flex-row space-x-4 space-y-4 p-4 m-4 items-center border-2 bg-slate-800 border-slate-600 rounded-2xl">
             <img className="max-w-xs h-auto rounded-full border-2 border-black" src={ProfileImg} alt={"Profile Picture"} />
             <div className="max-w-prose text-slate-100">
                 I moved to Austin, TX after graduating Summe Cum Lade from North Carolina State University with a B.S. in Aerospace Engineering.

@@ -7,7 +7,7 @@ const skillCategories: SkillProps[] = [
         skills: ["javascript", "html5", "css3", "typescript",]
     },
     {
-        category: "Front End Frameworks & Libraries",
+        category: "Front End Frameworks and Libraries",
         skills: ["react", "material-ui", "tailwindcss", "bootstrap"]
     },
     {
@@ -25,7 +25,7 @@ const Skills: React.FC = ({ }) => {
         <div className="flex justify-center">
         <div className=" flex flex-col items-center">
             {skillCategories.map(item =>
-                <div className="mx-16 my-2">
+                <div className="mx-16 my-3">
                     <SkillCategory category={item.category} skills={item.skills}/>
                 </div>
             )}

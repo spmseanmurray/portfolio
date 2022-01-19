@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer className="footer relative">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 mt-3">
                 <div className="border-t-2 border-slate-500">
                     <div className="flex justify-evenly px-3 pt-3">
                         {footerItems.map((item) =>

@@ -1,26 +1,43 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 export interface ProjectItemProps {
     name: string,
     description: string,
     image: string,
     link: string,
-    featured: boolean
+    github: string,
+    tech: string[]
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ name, description, image, link, featured, ...props }) => {
+const ProjectItem: React.FC<ProjectItemProps> = ({ name, description, image, link, github, tech, ...props }) => {
     return (
-        < div className={'border-p border-2 rounded-md hover:border-slate-400 '} >
-            <a href={link} target="_blank" rel="noreferrer">
-                <img src={image} alt={name + "image"} />
-            </a>
-            <div className='grid-cols-1 justify-start text-slate-100 hover:text-slate-400 mx-5'>
+        < div className={'border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5'} >
+            <img className="max-w-md md:max-w-2xl rounded-t-2xl border-b-2 border-slate-600" src={image} alt={name + "image"} />
+            <div className='justify-start align-center text-slate-200 p-3'>
                 <div className='text-xl text-sky-300 font-bold'>
                     {name}
+                    <a href={github} target="_blank" rel="noreferrer">
+                        <FontAwesomeIcon className="text-slate-200 mx-3" icon={faGithubAlt} size="lg" />
+                    </a>
+                    <a href={link} target="_blank" rel="noreferrer">
+                        <FontAwesomeIcon className="text-slate-200" icon={faExternalLinkAlt} size="lg" />
+                    </a>
                 </div>
-                <div className='text-m'>
+                <div className='text-m max-w-prose'>
                     {description}
                 </div>
+            </div>
+            <div className="flex justify-evenly flex-row mx-3 border-t-2 border-slate-600">
+                {tech.map(tech => {
+                    const techIcon = require("../images/tech/" + tech + ".png");
+                    return (
+                        <div className="flex flex-col items-center justify-center mx-4 my-1">
+                            <img className="w-10 h-10 mb-1" src={techIcon} alt={tech} key={tech} />
+                        </div>)
+                })}
             </div>
         </div >
     );

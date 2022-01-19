@@ -9,25 +9,25 @@ const Projects: React.FC = () => {
             name: 'Triathlon Training Log',
             description: 'Users connect their JustTrainingLog account to Strava inorder to access insightful training data and visualization',
             image: require('../images/TrainingLog.png'),
-            link: 'https://github.com/mgmer/justtraininglog',
-            featured: false
+            link: "http://justtraininglog.com",
+            github: 'https://github.com/mgmer/justtraininglog',
+            tech: ["react", "javascript", "html5", "css3", "mongodb", "heroku"]
         },
         {
             name: 'Personal Budgeting App',
             description: 'Tracking spending and income by catagory to understand where you money is going',
             image: require('../images/BudgetingApp.png'),
-            link: 'https://github.com/Jemeline/js-budgeting',
-            featured: false
+            link: "https://shielded-eyrie-13978.herokuapp.com/",
+            github: 'https://github.com/Jemeline/js-budgeting',
+            tech: ["react", "javascript", "html5", "css3", "mongodb", "heroku"]
         },
     ]
 
     return (
-        <div className="container mx-auto flex flex-row justify place-content-between py-3 ">
-            <div className=" flex items-center ">
+        <div className="flex justify-center">
+            <div className="flex flex-col justify-center items-center">
                 {projectItems.map(item =>
-                    <div className=" px-3">
-                        <ProjectItem name={item.name} description={item.description} image={item.image} link={item.link} featured={item.featured} />
-                    </div>
+                    <ProjectItem name={item.name} description={item.description} image={item.image} link={item.link} github={item.github} tech={item.tech}/>
                 )}
             </div>
         </div>
