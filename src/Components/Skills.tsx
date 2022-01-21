@@ -1,5 +1,5 @@
 import React from 'react'
-import SkillCategory, { SkillProps } from './SkillCategory';
+import SkillItem, { SkillProps } from './SkillItem';
 
 const skillCategories: SkillProps[] = [
     {
@@ -26,7 +26,7 @@ const Skills: React.FC = ({ }) => {
         <div className=" flex flex-col items-center">
             {skillCategories.map(item =>
                 <div className="mx-16 my-3">
-                    <SkillCategory category={item.category} skills={item.skills}/>
+                    <SkillItem category={item.category} skills={item.skills}/>
                 </div>
             )}
         </div>

@@ -5,12 +5,12 @@ export interface SkillProps {
     skills: string[]
 }
 
-const SkillCategory: React.FC<SkillProps> = ({ category, skills, ...props }) => {
+const SkillItem: React.FC<SkillProps> = ({ category, skills, ...props }) => {
 
     return (
         <div className="flex justify-center">
             <div className="flex flex-col flex-wrap items-center bg-slate-800 border-2 border-slate-600 rounded-2xl">
-            <div className="text-xl mt-1 text-slate-100 ">
+            <div className="text-xl mt-1 text-sky-300 font-bold">
                 {category}
             </div>
             <div className="flex flex-wrap items-center m-2 justify-evenly border-t-2 border-slate-600">
@@ -27,4 +27,4 @@ const SkillCategory: React.FC<SkillProps> = ({ category, skills, ...props }) => 
         </div >
     );
 }
-export default SkillCategory
+export default SkillItem

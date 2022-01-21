@@ -3,6 +3,7 @@ import './App.css';
 import Landing from './Components/Landing';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
+import Experience from './Components/Experience';
 import Projects from './Components/Projects';
 import About from './Components/About';
 import Skills from './Components/Skills';
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <div className="flex flex-col">
         <Header />
         <About />
+        <Experience />
         <Projects />
         <Skills />        
         <Footer />

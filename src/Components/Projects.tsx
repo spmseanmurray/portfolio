@@ -21,6 +21,14 @@ const Projects: React.FC = () => {
             github: 'https://github.com/Jemeline/js-budgeting',
             tech: ["react", "javascript", "html5", "css3", "mongodb", "heroku"]
         },
+        {
+            name: 'Personal Portfolio',
+            description: 'Highlight full-stack software development experience, projects, and skills',
+            image: require('../images/SquareProfile.jpg'),
+            link: "",
+            github: 'https://github.com/mgmer/portfolio',
+            tech: ["react", "typescript", "html5", "tailwindcss"]
+        },
     ]
 
     return (
