@@ -25,23 +25,21 @@ const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="footer relative">
-            <div className="container mx-auto px-6 mt-3">
-                <div className="border-t-2 border-slate-500">
-                    <div className="flex justify-evenly px-3 pt-3">
-                        {footerItems.map((item) =>
-                            <FooterItem key={item.name} name={item.name} link={item.link} icon={item.icon} />
-                        )}
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className='text-slate-200 mr-3'>
-                        Sean Murray
-                    </div>
-                    <div className='text-sky-300 text-sm my-auto'>&copy; 2022</div>
+        <div id="contact" className="bg-neutral-900 opacity-90 w-full">
+            <div className="border-t-2 border-slate-500 mx-6">
+                <div className="flex justify-evenly px-3 pt-3">
+                    {footerItems.map((item) =>
+                        <FooterItem key={item.name} name={item.name} link={item.link} icon={item.icon} />
+                    )}
                 </div>
             </div>
-        </footer>
+            <div className='flex justify-center'>
+                <div className='text-slate-200 mr-3'>
+                    Sean Murray
+                </div>
+                <div className='text-sky-300 text-sm my-auto'>&copy; 2022</div>
+            </div>
+        </div>
     );
 }
 

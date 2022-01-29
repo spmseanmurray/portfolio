@@ -10,7 +10,7 @@ export interface ExperienceItemProps {
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({ company, startDate, endDate, position, bullets }) => {
     return (
-        < div className={'border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5'} >
+        < div className={'w-full border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5'} >
             <div className="flex flex-col">
                 <div className="flex flex-col md:flex-row justify-between items-center p-3 gap-x-8 border-b-2 border-slate-600">
                     <div className="flex flex-row justify-center items-center gap-x-2">
@@ -20,7 +20,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ company, startDate, end
                     <div className='text-xl text-sky-300 font-bold'> {position}</div>
                     <div className='text-md text-slate-300'>{startDate} - {endDate}</div>
                 </div>
-                <div className='max-w-prose text-lg text-slate-300 mx-4 my-2'>
+                <div className='text-lg text-slate-300 mx-4 my-2'>
                     {bullets.map(bullet => {
                         return <div>- {bullet}</div>
                     })}

@@ -22,15 +22,13 @@ const skillCategories: SkillProps[] = [
 
 const Skills: React.FC = ({ }) => {
     return (
-        <div className="flex justify-center">
-        <div className=" flex flex-col items-center">
+        <div id="skills" className="snap-start h-screen flex flex-col justify-center items-center bg-slate-900">
             {skillCategories.map(item =>
                 <div className="mx-16 my-3">
-                    <SkillItem category={item.category} skills={item.skills}/>
+                    <SkillItem category={item.category} skills={item.skills} />
                 </div>
             )}
         </div>
-    </div>
     );
 }
 export default Skills
