@@ -7,11 +7,11 @@ import About from './About';
 import Skills from './Skills';
 
 const Sections: React.FC = () => {
-    return (
 
+    return (
         <div className="flex flex-grow flex-col h-screen w-screen bg-slate-900">
             <Header />
-            <div className="snap-y snap-mandatory scroll-smooth scrollbar-none overflow-y-auto">
+            <div className="snap-y snap-mandatory scroll-smooth overflow-y-auto">
                 <About />
                 <Experience />
                 <Projects />
@@ -19,7 +19,6 @@ const Sections: React.FC = () => {
             </div>
             <Footer />
         </div>
-
     )
 };
 export default Sections

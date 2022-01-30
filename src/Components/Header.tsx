@@ -1,33 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-
-interface HeaderItemProps {
-    name: string,
-    link: string,
-}
+import headerItems from '../config/HeaderConfig';
 
 const Header: React.FC = () => {
-
-    const headerItems: HeaderItemProps[] = [
-        {
-            name: 'About',
-            link: '/sections/#about',
-        },
-        {
-            name: 'Experience',
-            link: '/sections/#experience',
-        },
-        {
-            name: 'Projects',
-            link: '/sections/#projects',
-        },
-        {
-            name: 'Skills',
-            link: '/sections/#skills',
-        },
-    ]
-
     return (
         <div className="bg-neutral-900 opacity-90 px-6">
             <div className="flex flex-row justify place-content-between py-1 border-b-2 border-slate-600">

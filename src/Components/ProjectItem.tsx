@@ -1,18 +1,10 @@
 import React from 'react'
+import ProjectInterface from '../types/ProjectInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
-export interface ProjectItemProps {
-    name: string,
-    description: string,
-    image: string,
-    link: string,
-    github: string,
-    tech: string[]
-}
-
-const ProjectItem: React.FC<ProjectItemProps> = ({ name, description, image, link, github, tech, ...props }) => {
+const ProjectItem: React.FC<ProjectInterface> = ({ name, description, image, link, github, tech, ...props }) => {
     return (
         < div className={'border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5'} >
             <img className="max-w-md md:max-w-2xl rounded-t-2xl border-b-2 border-slate-600" src={image} alt={name + "image"} />

@@ -1,11 +1,8 @@
 import React from 'react'
+import SkillInterface from '../types/SkillInterface';
 
-export interface SkillProps {
-    category: string,
-    skills: string[]
-}
 
-const SkillItem: React.FC<SkillProps> = ({ category, skills, ...props }) => {
+const SkillItem: React.FC<SkillInterface> = ({ category, skills, ...props }) => {
 
     return (
         <div className="flex justify-center">

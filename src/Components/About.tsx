@@ -3,7 +3,7 @@ import React from 'react'
 const About: React.FC = () => {
     const ProfileImg = require('../images/SquareProfile.jpg');
     return (
-        <div id="about" className="snap-start h-screen flex justify-center items-center bg-slate-900">
+        <div id="about" className="snap-start min-h-full my-20 flex justify-center items-center bg-slate-900">
             <div className="flex flex-col md:flex-row space-x-4 space-y-4 p-4 m-4 items-center border-2 bg-slate-800 border-slate-600 rounded-2xl">
                 <img className="max-w-xs h-auto rounded-full border-2 border-black" src={ProfileImg} alt={"Profile Picture"} />
                 <div className="max-w-prose text-slate-100">
