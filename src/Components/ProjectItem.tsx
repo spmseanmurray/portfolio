@@ -7,18 +7,18 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 const ProjectItem: React.FC<ProjectInterface> = ({ name, description, image, link, github, tech, ...props }) => {
     return (
         < div className={'border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5'} >
-            <img className="max-w-md md:max-w-2xl rounded-t-2xl border-b-2 border-slate-600" src={image} alt={name + "image"} />
+            <img className="object-cover rounded-t-2xl border-b-2 border-slate-600" src={image} alt={name + "image"} />
             <div className='justify-start align-center text-slate-200 p-3'>
                 <div className='text-xl text-sky-300 font-bold'>
                     {name}
                     <a href={github} target="_blank" rel="noreferrer">
-                        <FontAwesomeIcon className="text-slate-200 mx-3" icon={faGithubAlt} size="lg" />
+                        <FontAwesomeIcon className="text-slate-200 mx-3" icon={faGithubAlt} />
                     </a>
                     <a href={link} target="_blank" rel="noreferrer">
-                        <FontAwesomeIcon className="text-slate-200" icon={faExternalLinkAlt} size="lg" />
+                        <FontAwesomeIcon className="text-slate-200" icon={faExternalLinkAlt} />
                     </a>
                 </div>
-                <div className='text-m max-w-prose'>
+                <div className='text-m lg:h-24 xl:h-16'>
                     {description}
                 </div>
             </div>

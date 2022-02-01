@@ -1,7 +1,6 @@
 interface ExperienceInterface {
     company: string,
-    startDate: string,
-    endDate: string,
+    dates: string,
     position: string,
     bullets: string[],
 }
