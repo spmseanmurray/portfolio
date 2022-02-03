@@ -7,7 +7,7 @@ const SkillItem: React.FC<SkillInterface> = ({ category, skills, ...props }) => 
     return (
         <div className="flex justify-center">
             <div className="flex flex-col flex-wrap items-center bg-slate-800 border-2 border-slate-600 rounded-2xl">
-                <div className="text-xl mt-1 text-sky-300 font-bold">
+                <div className="flex text-center mx-5 text-xl mt-1 text-sky-300 font-bold">
                     {category}
                 </div>
                 <div className="flex flex-wrap items-center m-2 justify-evenly border-t-2 border-slate-600">

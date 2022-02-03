@@ -11,7 +11,7 @@ const Sections: React.FC = () => {
     return (
         <div className="flex flex-grow flex-col h-screen w-screen bg-slate-900">
             <Header />
-            <div className="snap-y snap-mandatory scroll-smooth overflow-y-auto">
+            <div className="md: snap-y md:snap-mandatory scroll-smooth overflow-y-auto">
                 <About />
                 <Experience />
                 <Projects />

@@ -22,11 +22,11 @@ const ProjectItem: React.FC<ProjectInterface> = ({ name, description, image, lin
                     {description}
                 </div>
             </div>
-            <div className="flex justify-evenly flex-row mx-3 border-t-2 border-slate-600">
+            <div className="grid grid-cols-3 sm:grid-cols-6 mx-3 py-2 border-t-2 border-slate-600">
                 {tech.map(tech => {
                     const techIcon = require("../images/tech/" + tech + ".png");
                     return (
-                        <div className="flex flex-col items-center justify-center mx-4 my-1">
+                        <div className="col-span-1 items-center flex justify-center">
                             <img className="w-10 h-10 mb-1" src={techIcon} alt={tech} key={tech} />
                         </div>)
                 })}
