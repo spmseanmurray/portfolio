@@ -6,7 +6,7 @@ const About: React.FC = () => {
         <div id="about" className="snap-start min-h-full my-20 flex flex-col justify-center items-center bg-slate-900">
             <div className="text-slate-200 text-3xl font-bold">About</div>
             <div className="flex flex-col lg:flex-row space-x-4 space-y-4 p-4 m-4 items-center border-2 bg-slate-800 border-slate-600 rounded-2xl">
-                <img className="w-3/5 sm:max-w-xs h-auto rounded-full border-2 border-black" src={ProfileImg} alt={"Profile Picture"} />
+                <img className="w-3/5 sm:max-w-xs h-auto rounded-full border-2 border-black" src={ProfileImg} alt={"Profile"} />
                 <div className="max-w-prose text-slate-100">
                     I moved to Austin, TX after graduating Summa cum laude from North Carolina State University with a B.S. in Aerospace Engineering.
                     Since then I have been leverging my problem-solving, attention to detail, and desire to constantly learn as a Jr. Design Engineer
