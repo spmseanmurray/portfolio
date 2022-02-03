@@ -17,8 +17,8 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({ company, dates, positio
                     <div className='text-md text-slate-300 hidden md:flex'>{dates}</div>
                 </div>
                 <div className='text-m text-slate-300 mx-4 my-2'>
-                    {bullets.map(bullet => {
-                        return <div>- {bullet}</div>
+                    {bullets.map((bullet,ind) => {
+                        return <div key={ind}>- {bullet}</div>
                     })}
                 </div>
             </div>

@@ -26,7 +26,7 @@ const ProjectItem: React.FC<ProjectInterface> = ({ name, description, image, lin
                 {tech.map(tech => {
                     const techIcon = require("../images/tech/" + tech + ".png");
                     return (
-                        <div className="col-span-1 items-center flex justify-center">
+                        <div key={tech} className="col-span-1 items-center flex justify-center">
                             <img className="w-10 h-10 mb-1" src={techIcon} alt={tech} key={tech} />
                         </div>)
                 })}

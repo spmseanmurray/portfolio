@@ -14,7 +14,7 @@ const Header: React.FC = () => {
                 </Link>
                 <div className="hidden sm:flex md:flex-row items-center ">
                     {headerItems.map(item =>
-                        <div className="text-slate-100 px-3 hover:text-slate-400">
+                        <div key={item.name} className="text-slate-100 px-3 hover:text-slate-400">
                             <div className={`text-slate-100 font-bold hover:text-slate-400 `}>
                                 <HashLink smooth to={item.link}>
                                     {item.name}

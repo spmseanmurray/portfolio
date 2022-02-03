@@ -14,7 +14,7 @@ const SkillItem: React.FC<SkillInterface> = ({ category, skills, ...props }) => 
                     {skills.map(skill => {
                         const skillIcon = require("../images/tech/" + skill + ".png");
                         return (
-                            <div className="flex flex-col items-center justify-center mx-4 my-1 text-slate-400">
+                            <div key={skill} className="flex flex-col items-center justify-center mx-4 my-1 text-slate-400">
                                 <img className="w-20 h-20 mb-1" src={skillIcon} alt={skill} key={skill} />
                                 {skill}
                             </div>)

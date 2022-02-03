@@ -8,7 +8,7 @@ const Skills: React.FC = ({ }) => {
             <div className="text-slate-200 text-3xl font-bold">Skills</div>
             <div className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-8 mt-4">
                 {skillCategories.map(item =>
-                    <SkillItem category={item.category} skills={item.skills} />
+                    <SkillItem key={item.category} category={item.category} skills={item.skills} />
                 )}
             </div>
         </div>

@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
             <div className="text-slate-200 text-3xl font-bold">Projects</div>
             <div className="flex flex-col lg:flex-row items-center">
                 {projectItems.map(item =>
-                    <ProjectItem name={item.name} description={item.description} image={item.image} link={item.link} github={item.github} tech={item.tech} />
+                    <ProjectItem key={item.name} name={item.name} description={item.description} image={item.image} link={item.link} github={item.github} tech={item.tech} />
                 )}
             </div>
         </div>
