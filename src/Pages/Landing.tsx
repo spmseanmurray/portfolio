@@ -10,7 +10,7 @@ const Landing: React.FC = () => {
                 SEAN MURRAY
             </div>
             <div className="text-2xl text-center font-bold text-slate-200 mx-5">
-                Aerospace engineer turned self-taught full stack software developer
+                Aerospace engineer turned full stack software engineer
             </div>
             <Link to="/sections">
                 <button className="flex justify-center border-2 rounded-2xl border-slate-400 text-slate-200 hover:text-slate-100 p-2 mt-5 hover:bg-gray-800">

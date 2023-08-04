@@ -8,7 +8,7 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({ company, dates, positio
                 <div className="flex flex-col md:flex-row justify-between items-center p-3 md:gap-x-8 border-b-2 border-slate-600">
                     <div className="flex-row items-center justify-between md:justify-center">
                         <div className='flex flex-row items-center gap-x-2 '>
-                            <img className="w-10 md:w-16 rounded-xl" src={require("../images/employers/" + company.toLowerCase() + ".png")} alt={company + "image"} />
+                            <img className="w-10 md:w-16 rounded-xl" src={require("../images/employers/" + company.replaceAll(" ", "").toLowerCase() + ".png")} alt={company + "image"} />
                             <div className='text-xl text-slate-200 font-bold'> {company}</div>
                         </div>
                         <div className='text-md text-slate-300 md:hidden'>{dates}</div>

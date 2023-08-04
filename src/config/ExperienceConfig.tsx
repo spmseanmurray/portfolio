@@ -2,8 +2,19 @@ import ExperienceInterface from '../types/ExperienceInterface';
 
 const experienceItems: ExperienceInterface[] = [
     {
+        company: "The Home Depot",
+        dates: "March 2022 - Present",
+        position: "Software Engineer II",
+        bullets: [
+            "Contributed to the development of a retail media platform for supplier self-service marketing campaign launches, performance monitoring, and advertisement management using React, Node/Express, and PostgreSQL",
+            "Drove technical planning and on-time delivery of a new third-party payment integration through effective cross functional collaboration under a fixed contractual deadline resulting in billing cost reduction of 23%",
+            "Improved developer efficiency and feature delivery time through the introduction of technologies such as the build tool NX, frontend global state management with Zustand, feature flags, and end-to-end testing with Cypress",
+            "Continuously supported the learning and growth of junior engineers through mentoring, support on tickets, and timely/constructive PR feedback"
+        ],
+    },
+    {
         company: "Fathom5",
-        dates: "July 2021 - Present",
+        dates: "July 2021 - March 2022",
         position: "Jr. Design Engineer",
         bullets: [
             "Developed a full stack application in a fast-paced start-up environment to manage Navy sponsored hack-a-thons",
@@ -13,7 +24,7 @@ const experienceItems: ExperienceInterface[] = [
     },
     {
         company: "SpaceX",
-        dates: "Summer 2019/2022",
+        dates: "Summer 2019/2020",
         position: "Manufacturing Engineering Intern",
         bullets: [
             "Refined manufacturing processes for the Falcon 9 launch vehicle through process, tooling, and planning improvement projects, resulting in a total yearly savings of ~$250,000",
