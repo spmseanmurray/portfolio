@@ -2,7 +2,7 @@ import ExperienceInterface from '../types/ExperienceInterface';
 
 const experienceItems: ExperienceInterface[] = [
     {
-        company: "The Home Depot",
+        company: "Home Depot",
         dates: "March 2022 - Present",
         position: "Software Engineer II",
         bullets: [

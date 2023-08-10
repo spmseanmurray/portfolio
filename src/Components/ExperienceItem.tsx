@@ -11,7 +11,7 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({ company, dates, positio
                             <img className="w-10 md:w-16 rounded-xl" src={require("../images/employers/" + company.replaceAll(" ", "").toLowerCase() + ".png")} alt={company + "image"} />
                             <div className='text-xl text-slate-200 font-bold'> {company}</div>
                         </div>
-                        <div className='text-md text-slate-300 md:hidden'>{dates}</div>
+                        <div className='text-md text-slate-300 md:hidden text-center'>{dates}</div>
                     </div>
                     <div className='text-xl text-sky-300 font-bold'> {position}</div>
                     <div className='text-md text-slate-300 hidden md:flex'>{dates}</div>
