@@ -1,8 +1,7 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
-import Landing from './Pages/Landing';
-import Sections from './Pages/Sections'
-
+import React from "react";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import Landing from "./Pages/Landing";
+import Sections from "./Pages/Sections";
 
 const App: React.VFC = () => {
   return (
@@ -13,6 +12,6 @@ const App: React.VFC = () => {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
