@@ -14,7 +14,7 @@ const ProjectItem: React.FC<ProjectInterface> = ({
 }) => {
   return (
     <div
-      className={"border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5"}
+      className="border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5"
     >
       <img
         className="object-cover rounded-t-2xl border-b-2 border-slate-600"
@@ -22,14 +22,18 @@ const ProjectItem: React.FC<ProjectInterface> = ({
         alt={name + "image"}
       />
       <div className="justify-start align-center text-slate-200 p-3">
-        <div className="text-xl text-sky-300 font-bold">
+        <div className="flex text-xl text-sky-300 font-bold gap-x-3">
           {name}
-          <a href={github} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon
-              className="text-slate-200 mx-3"
-              icon={faGithubAlt}
-            />
-          </a>
+          {
+            github ?    
+            <a href={github} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon
+                className="text-slate-200"
+                icon={faGithubAlt}
+              />
+            </a> 
+            : null
+          }
           <a href={link} target="_blank" rel="noreferrer">
             <FontAwesomeIcon
               className="text-slate-200"

@@ -3,7 +3,7 @@ interface ProjectInterface {
     description: string,
     image: string,
     link: string,
-    github: string,
+    github?: string,
     tech: string[]
 }
 export default ProjectInterface

@@ -8,6 +8,7 @@ const experienceItems: ExperienceInterface[] = [
     bullets: [
       "Led on time delivery of project to display personalized product listing advertisments (PLAs) within email campaigns which results in ~$25,000/week in ad spend from ~20 million impressions/week",
       "Facilitated Email PLAs project success by coordinating internal technical planning/development, driving communication with third-parties, and setting up robust monitoring and alerting",
+      "Identified and resolved a redirect bug which had existed for ~2 years and resulted in ~$500,000 in lost revenue",
       "Continuously supported the learning and growth of junior engineers through mentoring, support on tickets, and timely/constructive PR feedback",
     ],
   },

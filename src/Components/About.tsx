@@ -19,10 +19,9 @@ const About: React.FC = () => {
           North Carolina State University. My journey began with notable
           internships at both BMW and SpaceX, kindling my intrigue for pushing
           technological boundaries and embracing novel challenges. Following
-          graduation, Austin, TX beckoned, leading me to immerse myself in the
-          dynamic startup world at Fathom5, a maritime cyber-security venture.
-          This experience enabled me to seamlessly transition from my aerospace
-          roots into the realm of full-stack software engineering.
+          graduation, I immersed myself in the dynamic startup world at Fathom5, 
+          a maritime cyber-security venture. This experience enabled me to seamlessly 
+          transition from my aerospace roots into the realm of full-stack software engineering.
           <div className="mt-4" />
           Today my professional pursuits continue as a Sr. Software Engineer at
           The Home Depot. I dedicate myself to honing and expanding my technical
@@ -33,8 +32,7 @@ const About: React.FC = () => {
           <div className="mt-4" />
           Beyond coding, you'll likely find me somewhere in the great outdoors.
           Whether I'm hitting the pavement for a run, traversing hiking trails,
-          or exploring the wilderness on backpacking trips, I relish every
-          moment of adventure.
+          or exploring the wilderness on backpacking trips, I love to be outside.
         </div>
       </div>
     </div>
