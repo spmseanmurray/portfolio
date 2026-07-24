@@ -6,6 +6,7 @@
     "node": ">=20.19"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^13.13.0",
     "@tailwindcss/vite": "^4.3.3",
     "lucide-react": "^1.26.0",
     "react": "^19.2.0",

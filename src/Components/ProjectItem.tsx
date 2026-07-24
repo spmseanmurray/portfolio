@@ -2,7 +2,7 @@ import React from "react";
 import ProjectInterface from "../types/ProjectInterface";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
-import { techIconMap } from "../utils/assets";
+import { techIcons } from "./icons/techIcons";
 
 const ProjectItem: React.FC<ProjectInterface> = ({
   name,
@@ -43,22 +43,16 @@ const ProjectItem: React.FC<ProjectInterface> = ({
             <ExternalLink className="text-slate-200" size={20} />
           </a>
         </div>
-        <div className="text-m lg:h-24 xl:h-16">{description}</div>
+        <div className="text-m lg:min-h-24 xl:min-h-16">{description}</div>
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-6 mx-3 py-2 border-t-2 border-slate-600">
-        {tech.map((tech) => {
-          const techIcon = techIconMap[tech];
+        {tech.map((t) => {
+          const entry = techIcons[t];
+          if (!entry) return null;
+          const Icon = entry.icon;
           return (
-            <div
-              key={tech}
-              className="col-span-1 items-center flex justify-center"
-            >
-              <img
-                className="w-10 h-10 mb-1"
-                src={techIcon}
-                alt={tech}
-                key={tech}
-              />
+            <div key={t} className="col-span-1 items-center flex justify-center">
+              <Icon size={40} color={entry.hex} className="mb-1" title={t} />
             </div>
           );
         })}
