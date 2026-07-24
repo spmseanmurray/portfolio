@@ -6,6 +6,7 @@
     "node": ">=20.19"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "lucide-react": "^1.26.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -36,9 +37,7 @@
     "@types/react-dom": "^19.2.0",
     "@types/react-router-hash-link": "^2.4.9",
     "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.7.3",
     "vite": "^7.0.0"
   }
