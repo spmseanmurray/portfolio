@@ -1,8 +1,10 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import React from "react";
+
+type IconComponent = React.FC<{ size?: number; className?: string }>;
 
 interface FooterInterface {
-    name: string,
-    link: string,
-    icon: IconDefinition
+  name: string;
+  link: string;
+  icon: IconComponent;
 }
-export default FooterInterface
+export default FooterInterface;
