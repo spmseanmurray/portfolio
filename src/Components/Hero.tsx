@@ -5,16 +5,22 @@ const Hero: React.FC = () => {
   return (
     <div
       id="top"
-      className="flex min-h-[78vh] items-center bg-ground px-5 py-24"
+      className="flex items-center bg-ground px-5 py-28 lg:py-40"
     >
-      <div className="mx-auto w-full max-w-5xl">
+      {/*
+        Sized by padding rather than viewport height. A vh-based hero puts a
+        fixed slab of content in a box that grows with the screen, so the
+        taller the display the emptier it looks -- 71% dead space at 1060px.
+        Padding keeps that gap constant instead.
+      */}
+      <div className="mx-auto w-full max-w-6xl">
         {/*
           The serif display and painted accent mark carry the hero, but the
           name stays on one line at a moderate scale rather than stacking --
           the stacked treatment reads as a statement piece, which is louder
           than this page wants to be.
         */}
-        <h1 className="font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl">
+        <h1 className="font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl xl:text-7xl">
           Sean Murray
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink">

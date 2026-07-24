@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-20 border-b border-rule bg-ground/90 backdrop-blur">
-      <nav className="mx-auto w-full max-w-5xl px-5">
+      <nav className="mx-auto w-full max-w-6xl px-5">
         <div className="flex items-center justify-between py-3">
           <a
             href="#top"

@@ -18,7 +18,7 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ id, title, children }) => {
   return (
     <section id={id} className="scroll-mt-24 py-section">
-      <div className="mx-auto w-full max-w-5xl px-5">
+      <div className="mx-auto w-full max-w-6xl px-5">
         <Reveal>
           <h2 className="border-b border-rule pb-3 text-xs uppercase tracking-[0.18em] text-faint">
             {title}
