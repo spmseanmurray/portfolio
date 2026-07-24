@@ -66,3 +66,55 @@ code {
     scroll-behavior: auto;
   }
 }
+
+/*
+ * Hero entrance.
+ *
+ * The hiding lives inside `no-preference` rather than being undone under
+ * `reduce`. Written the other way round, anyone who prefers reduced motion --
+ * or any renderer that ignores animations -- would be left staring at
+ * permanently invisible text.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-stagger > * {
+    opacity: 0;
+    animation: hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+  .hero-stagger > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .hero-stagger > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .hero-stagger > *:nth-child(3) {
+    animation-delay: 0.34s;
+  }
+  .hero-stagger > *:nth-child(4) {
+    animation-delay: 0.48s;
+  }
+
+  /* The accent mark paints itself in last, so the eye finishes on it. */
+  .hero-mark {
+    animation: hero-wipe 0.55s cubic-bezier(0.5, 0, 0.2, 1) 0.5s both;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

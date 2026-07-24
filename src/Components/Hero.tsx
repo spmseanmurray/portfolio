@@ -1,18 +1,20 @@
 import React from "react";
 import { ArrowDown } from "lucide-react";
+import HeroContours from "./HeroContours";
 
 const Hero: React.FC = () => {
   return (
     <div
       id="top"
-      className="flex min-h-svh items-center bg-ground px-5 py-24"
+      className="relative flex min-h-svh items-center overflow-hidden bg-ground px-5 py-24"
     >
       {/*
-        The hero deliberately holds a full screen: the "View my work" cue
+        The hero deliberately holds a full screen: the "Learn more" cue
         only means anything if the work is below the fold. svh rather than
         vh so mobile browser chrome doesn't push the CTA out of view.
       */}
-      <div className="mx-auto w-full max-w-6xl">
+      <HeroContours />
+      <div className="hero-stagger relative mx-auto w-full max-w-6xl">
         {/*
           The serif display and painted accent mark carry the hero, but the
           name stays on one line at a moderate scale rather than stacking --
@@ -24,7 +26,7 @@ const Hero: React.FC = () => {
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink">
           Aerospace engineer turned{" "}
-          <span className="bg-accent px-2 font-semibold text-on-accent">
+          <span className="hero-mark bg-accent px-2 font-semibold text-on-accent">
             full stack software engineer
           </span>
         </p>
