@@ -41,12 +41,6 @@ import {
   SiClaudeHex,
   SiGithubcopilot,
   SiGithubcopilotHex,
-  SiJest,
-  SiJestHex,
-  SiCypress,
-  SiCypressHex,
-  SiTestinglibrary,
-  SiTestinglibraryHex,
   SiGraphql,
   SiGraphqlHex,
   SiGooglebigquery,
@@ -63,14 +57,6 @@ import {
   SiKubernetesHex,
   SiTerraform,
   SiTerraformHex,
-  SiNx,
-  SiNxHex,
-  SiVite,
-  SiViteHex,
-  SiStorybook,
-  SiStorybookHex,
-  SiPostman,
-  SiPostmanHex,
 } from "@icons-pack/react-simple-icons";
 import type React from "react";
 import { Coffee, Database, Terminal } from "lucide-react";
@@ -162,11 +148,6 @@ export const techIcons: Record<string, TechIcon> = {
   prometheus: brand(SiPrometheus, SiPrometheusHex, "Prometheus"),
   grafana: brand(SiGrafana, SiGrafanaHex, "Grafana"),
 
-  // Build and dev tooling
-  nx: brand(SiNx, SiNxHex, "Nx"),
-  vite: brand(SiVite, SiViteHex, "Vite"),
-  storybook: brand(SiStorybook, SiStorybookHex, "Storybook"),
-
   // AI tooling
   claude: brand(SiClaude, SiClaudeHex, "Claude Code"),
   "github-copilot": brand(
@@ -176,14 +157,4 @@ export const techIcons: Record<string, TechIcon> = {
   ),
   // simple-icons carries no OpenAI/Codex mark, so use a neutral glyph.
   codex: { icon: Terminal, color: DARK_FALLBACK, label: "Codex" },
-
-  // Testing
-  jest: brand(SiJest, SiJestHex, "Jest"),
-  cypress: brand(SiCypress, SiCypressHex, "Cypress"),
-  "react-testing": brand(
-    SiTestinglibrary,
-    SiTestinglibraryHex,
-    "Testing Library"
-  ),
-  postman: brand(SiPostman, SiPostmanHex, "Postman"),
 };
