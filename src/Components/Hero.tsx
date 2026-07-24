@@ -34,10 +34,10 @@ const Hero: React.FC = () => {
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
           <a
-            href="#experience"
+            href="#about"
             className="group inline-flex items-center gap-x-2 border-b border-accent pb-1 text-sm text-ink transition-colors hover:text-accent"
           >
-            View my work
+            Learn more
             <ArrowDown
               size={16}
               className="transition-transform group-hover:translate-y-0.5 motion-reduce:transition-none"
