@@ -1,6 +1,6 @@
 import React from "react";
 import SkillInterface from "../types/SkillInterface";
-import { techIconMap } from "../utils/assets";
+import { techIcons } from "./icons/techIcons";
 
 const SkillItem: React.FC<SkillInterface> = ({ category, skills }) => {
   return (
@@ -11,18 +11,21 @@ const SkillItem: React.FC<SkillInterface> = ({ category, skills }) => {
         </div>
         <div className="flex flex-wrap items-center m-2 justify-evenly border-t-2 border-slate-600">
           {skills.map((skill) => {
-            const skillIcon = techIconMap[skill];
+            const entry = techIcons[skill];
+            const Icon = entry?.icon;
             return (
               <div
                 key={skill}
                 className="flex flex-col items-center justify-center mx-4 my-1 text-slate-400"
               >
-                <img
-                  className="w-20 h-20 mb-1"
-                  src={skillIcon}
-                  alt={skill}
-                  key={skill}
-                />
+                {Icon ? (
+                  <Icon
+                    size={64}
+                    color={entry.hex}
+                    className="mb-1"
+                    title={skill}
+                  />
+                ) : null}
                 {skill}
               </div>
             );
