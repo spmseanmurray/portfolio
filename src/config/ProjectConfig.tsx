@@ -17,18 +17,18 @@ const projectItems: ProjectInterface[] = [
     description:
       "Interfaced with the Strava fitness app REST API using OAuth 2.0 authentication to access athlete activity data and provide insightful time-series training data and visualization",
     image: TrainingLog,
-    link: "http://justtraininglog.com",
+    // Live demo has been retired; source remains available.
     github: "https://github.com/mgmer/justtraininglog",
-    tech: ["react", "javascript", "html5", "css3", "mongodb", "heroku"],
+    tech: ["react", "javascript", "html5", "css3", "mongodb"],
   },
   {
     name: "Budget Tracking",
     description:
       "Co-developed financial tracking web application which records and analyzes income and expenses by category to provide an improved personal budgeting experience over previous spreadsheet solution",
     image: BudgetingApp,
-    link: "https://www.jsbudget.com/login",
+    // Live demo has been retired; source remains available.
     github: "https://github.com/Jemeline/js-budgeting",
-    tech: ["react", "javascript", "html5", "css3", "mongodb", "heroku"],
+    tech: ["react", "javascript", "html5", "css3", "mongodb"],
   },
 ];
 export default projectItems;

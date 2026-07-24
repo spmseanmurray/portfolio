@@ -12,21 +12,20 @@ const SkillItem: React.FC<SkillInterface> = ({ category, skills }) => {
         <div className="flex flex-wrap items-center m-2 justify-evenly border-t-2 border-slate-600">
           {skills.map((skill) => {
             const entry = techIcons[skill];
-            const Icon = entry?.icon;
+            if (!entry) return null;
+            const Icon = entry.icon;
             return (
               <div
                 key={skill}
                 className="flex flex-col items-center justify-center mx-4 my-1 text-slate-400"
               >
-                {Icon ? (
-                  <Icon
-                    size={64}
-                    color={entry.hex}
-                    className="mb-1"
-                    title={skill}
-                  />
-                ) : null}
-                {skill}
+                <Icon
+                  size={64}
+                  color={entry.color}
+                  className="mb-1"
+                  title={entry.label}
+                />
+                {entry.label}
               </div>
             );
           })}
