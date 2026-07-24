@@ -16,23 +16,31 @@ const skillCategories: SkillInterface[] = [
   },
   {
     category: "Frameworks and Libraries",
-    skills: ["react", "nodejs", "express", "springboot", "tailwindcss"],
+    skills: ["react", "nodejs", "express", "springboot", "graphql", "tailwindcss"],
   },
   {
-    category: "Data",
-    skills: ["postgresql", "mongodb"],
+    category: "Data and Pipelines",
+    skills: ["postgresql", "mongodb", "bigquery", "pubsub", "airflow", "dataflow"],
   },
   {
-    category: "CI/CD, Cloud, and Observability",
-    skills: ["git", "gh-actions", "gcp", "prometheus", "grafana"],
+    category: "Cloud and Infrastructure",
+    skills: ["gcp", "docker", "kubernetes", "terraform"],
+  },
+  {
+    category: "CI/CD and Observability",
+    skills: ["git", "gh-actions", "prometheus", "grafana"],
+  },
+  {
+    category: "Build and Dev Tooling",
+    skills: ["nx", "vite", "storybook"],
   },
   {
     category: "AI Tooling",
-    skills: ["claude", "github-copilot"],
+    skills: ["claude", "github-copilot", "codex"],
   },
   {
     category: "Testing",
-    skills: ["jest", "cypress", "react-testing"],
+    skills: ["jest", "cypress", "react-testing", "postman"],
   },
 ];
 export default skillCategories;

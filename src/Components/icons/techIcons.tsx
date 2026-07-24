@@ -47,9 +47,33 @@ import {
   SiCypressHex,
   SiTestinglibrary,
   SiTestinglibraryHex,
+  SiGraphql,
+  SiGraphqlHex,
+  SiGooglebigquery,
+  SiGooglebigqueryHex,
+  SiGooglepubsub,
+  SiGooglepubsubHex,
+  SiApacheairflow,
+  SiApacheairflowHex,
+  SiGoogledataflow,
+  SiGoogledataflowHex,
+  SiDocker,
+  SiDockerHex,
+  SiKubernetes,
+  SiKubernetesHex,
+  SiTerraform,
+  SiTerraformHex,
+  SiNx,
+  SiNxHex,
+  SiVite,
+  SiViteHex,
+  SiStorybook,
+  SiStorybookHex,
+  SiPostman,
+  SiPostmanHex,
 } from "@icons-pack/react-simple-icons";
 import type React from "react";
-import { Coffee, Database } from "lucide-react";
+import { Coffee, Database, Terminal } from "lucide-react";
 
 // Both simple-icons and lucide components accept this prop shape, so either
 // can fill the icon slot.
@@ -116,17 +140,32 @@ export const techIcons: Record<string, TechIcon> = {
   nodejs: brand(SiNodedotjs, SiNodedotjsHex, "Node.js"),
   express: brand(SiExpress, SiExpressHex, "Express"),
   springboot: brand(SiSpringboot, SiSpringbootHex, "Spring Boot"),
+  graphql: brand(SiGraphql, SiGraphqlHex, "GraphQL"),
 
-  // Databases
+  // Data and pipelines
   postgresql: brand(SiPostgresql, SiPostgresqlHex, "PostgreSQL"),
   mongodb: brand(SiMongodb, SiMongodbHex, "MongoDB"),
+  bigquery: brand(SiGooglebigquery, SiGooglebigqueryHex, "BigQuery"),
+  pubsub: brand(SiGooglepubsub, SiGooglepubsubHex, "Pub/Sub"),
+  airflow: brand(SiApacheairflow, SiApacheairflowHex, "Airflow"),
+  dataflow: brand(SiGoogledataflow, SiGoogledataflowHex, "Dataflow"),
 
-  // Tooling and observability
+  // Cloud and infrastructure
+  gcp: brand(SiGooglecloud, SiGooglecloudHex, "Google Cloud"),
+  docker: brand(SiDocker, SiDockerHex, "Docker"),
+  kubernetes: brand(SiKubernetes, SiKubernetesHex, "Kubernetes"),
+  terraform: brand(SiTerraform, SiTerraformHex, "Terraform"),
+
+  // CI/CD and observability
   git: brand(SiGit, SiGitHex, "Git"),
   "gh-actions": brand(SiGithubactions, SiGithubactionsHex, "GitHub Actions"),
-  gcp: brand(SiGooglecloud, SiGooglecloudHex, "Google Cloud"),
   prometheus: brand(SiPrometheus, SiPrometheusHex, "Prometheus"),
   grafana: brand(SiGrafana, SiGrafanaHex, "Grafana"),
+
+  // Build and dev tooling
+  nx: brand(SiNx, SiNxHex, "Nx"),
+  vite: brand(SiVite, SiViteHex, "Vite"),
+  storybook: brand(SiStorybook, SiStorybookHex, "Storybook"),
 
   // AI tooling
   claude: brand(SiClaude, SiClaudeHex, "Claude Code"),
@@ -135,6 +174,8 @@ export const techIcons: Record<string, TechIcon> = {
     SiGithubcopilotHex,
     "GitHub Copilot"
   ),
+  // simple-icons carries no OpenAI/Codex mark, so use a neutral glyph.
+  codex: { icon: Terminal, color: DARK_FALLBACK, label: "Codex" },
 
   // Testing
   jest: brand(SiJest, SiJestHex, "Jest"),
@@ -144,4 +185,5 @@ export const techIcons: Record<string, TechIcon> = {
     SiTestinglibraryHex,
     "Testing Library"
   ),
+  postman: brand(SiPostman, SiPostmanHex, "Postman"),
 };
