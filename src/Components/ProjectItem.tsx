@@ -43,7 +43,7 @@ const ProjectItem: React.FC<ProjectInterface> = ({
             <ExternalLink className="text-slate-200" size={20} />
           </a>
         </div>
-        <div className="text-m lg:h-24 xl:h-16">{description}</div>
+        <div className="text-m lg:min-h-24 xl:min-h-16">{description}</div>
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-6 mx-3 py-2 border-t-2 border-slate-600">
         {tech.map((t) => {
