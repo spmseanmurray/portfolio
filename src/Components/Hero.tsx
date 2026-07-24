@@ -8,19 +8,8 @@ const Hero: React.FC = () => {
       id="top"
       className="relative flex min-h-svh items-center overflow-hidden bg-ground px-5 py-24"
     >
-      {/*
-        The hero deliberately holds a full screen: the "Learn more" cue
-        only means anything if the work is below the fold. svh rather than
-        vh so mobile browser chrome doesn't push the CTA out of view.
-      */}
       <HeroContours />
       <div className="hero-stagger relative mx-auto w-full max-w-6xl">
-        {/*
-          The serif display and painted accent mark carry the hero, but the
-          name stays on one line at a moderate scale rather than stacking --
-          the stacked treatment reads as a statement piece, which is louder
-          than this page wants to be.
-        */}
         <h1 className="font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl xl:text-7xl">
           Sean Murray
         </h1>

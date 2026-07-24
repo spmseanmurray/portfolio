@@ -7,10 +7,8 @@ import experienceItems from "../config/ExperienceConfig";
 const Experience: React.FC = () => {
   return (
     <Section id="experience" title="Experience">
-      {/* Hairlines between roles rather than boxes around them. */}
       <div className="divide-y divide-rule">
         {experienceItems.map((item, index) => (
-          // Two entries share the company name, so the dates disambiguate.
           <div
             key={`${item.company} ${item.dates}`}
             className="py-8 first:pt-0 last:pb-0"

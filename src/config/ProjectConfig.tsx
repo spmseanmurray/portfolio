@@ -5,7 +5,6 @@ import BudgetingApp from "../images/BudgetingApp.png";
 
 const projectItems: ProjectInterface[] = [
   {
-    // The role moved into `context`, so the name can just be the project.
     name: "Earth Hero",
     context: "Volunteer Sr. Web Developer",
     description:
@@ -20,7 +19,6 @@ const projectItems: ProjectInterface[] = [
     description:
       "Interfaced with the Strava fitness app REST API using OAuth 2.0 authentication to access athlete activity data and provide insightful time-series training data and visualization",
     image: TrainingLog,
-    // Live demo has been retired; source remains available.
     github: "https://github.com/mgmer/justtraininglog",
     tech: ["react", "javascript", "html5", "css3", "mongodb"],
   },
@@ -30,7 +28,6 @@ const projectItems: ProjectInterface[] = [
     description:
       "Co-developed financial tracking web application which records and analyzes income and expenses by category to provide an improved personal budgeting experience over previous spreadsheet solution",
     image: BudgetingApp,
-    // Live demo has been retired; source remains available.
     github: "https://github.com/Jemeline/js-budgeting",
     tech: ["react", "javascript", "html5", "css3", "mongodb"],
   },

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface RevealProps {
   children: React.ReactNode;
-  /** Stagger, in ms, for items revealed as a group. */
   delay?: number;
 }
 
@@ -19,7 +18,7 @@ const Reveal: React.FC<RevealProps> = ({ children, delay = 0 }) => {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReduced || typeof IntersectionObserver === "undefined") {
@@ -42,7 +41,7 @@ const Reveal: React.FC<RevealProps> = ({ children, delay = 0 }) => {
           }
         });
       },
-      { rootMargin: "0px 0px -10% 0px" }
+      { rootMargin: "0px 0px -10% 0px" },
     );
 
     observer.observe(node);

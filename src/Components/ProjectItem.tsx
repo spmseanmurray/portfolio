@@ -17,8 +17,6 @@ const ProjectItem: React.FC<ProjectInterface> = ({
   return (
     <RailRow label={context}>
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-        {/* Screenshots stay subordinate to the writing here, so they sit as a
-            fixed-width thumbnail rather than spanning the column. */}
         <img
           className="aspect-[16/10] w-full shrink-0 rounded border border-rule object-cover object-top sm:w-56"
           src={image}

@@ -61,8 +61,6 @@ import {
 import type React from "react";
 import { Coffee, Database, Terminal } from "lucide-react";
 
-// Both simple-icons and lucide components accept this prop shape, so either
-// can fill the icon slot.
 type IconComponent = React.ComponentType<{
   size?: number;
   color?: string;
@@ -115,8 +113,6 @@ export const techIcons: Record<string, TechIcon> = {
   golang: brand(SiGo, SiGoHex, "Go"),
   html5: brand(SiHtml5, SiHtml5Hex, "HTML"),
   css3: brand(SiCss, SiCssHex, "CSS"),
-  // simple-icons dropped the Java mark (Oracle trademark) and has no generic
-  // SQL mark, so these use neutral lucide glyphs instead of a brand logo.
   java: { icon: Coffee, color: DARK_FALLBACK, label: "Java" },
   sql: { icon: Database, color: DARK_FALLBACK, label: "SQL" },
 
@@ -154,8 +150,7 @@ export const techIcons: Record<string, TechIcon> = {
   "github-copilot": brand(
     SiGithubcopilot,
     SiGithubcopilotHex,
-    "GitHub Copilot"
+    "GitHub Copilot",
   ),
-  // simple-icons carries no OpenAI/Codex mark, so use a neutral glyph.
   codex: { icon: Terminal, color: DARK_FALLBACK, label: "Codex" },
 };

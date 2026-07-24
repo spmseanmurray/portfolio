@@ -1,9 +1,7 @@
 import React from "react";
 
 interface RailRowProps {
-  /** Primary rail text — usually a date range. */
   label: string;
-  /** Optional second line in the rail, e.g. an employer. */
   sublabel?: string;
   children: React.ReactNode;
 }
