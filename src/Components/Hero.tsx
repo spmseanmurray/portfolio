@@ -5,29 +5,29 @@ const Hero: React.FC = () => {
   return (
     <div
       id="top"
-      className="flex flex-col items-center justify-center h-screen bg-slate-900 px-5 text-center"
+      className="flex min-h-[80vh] flex-col items-center justify-center bg-ground px-5 py-24 text-center"
     >
-      <h1 className="text-6xl font-bold text-sky-300 mx-14">SEAN MURRAY</h1>
-      <p className="text-2xl font-bold text-slate-200 mt-2">
+      <h1 className="font-display text-6xl font-semibold tracking-tight text-ink">
+        Sean Murray
+      </h1>
+      <p className="mt-4 text-xl font-semibold text-accent">
         Aerospace engineer turned full stack software engineer
       </p>
-      <p className="max-w-prose text-slate-400 mt-3">
+      <p className="mt-4 max-w-prose text-muted">
         Six years of full stack experience, delivering scalable solutions to
         complex business challenges through technical leadership.
       </p>
-      <p className="flex items-center gap-x-2 text-sm text-slate-400 mt-4">
+      <p className="mt-6 flex items-center gap-x-2 text-sm text-muted">
         <span
-          className="h-2 w-2 rounded-full bg-emerald-400"
+          className="h-2 w-2 rounded-full bg-accent"
           aria-hidden="true"
         />
         Open to new opportunities
       </p>
-      <a href="#about">
-        <button className="flex justify-center border-2 rounded-2xl border-slate-400 text-slate-200 hover:text-slate-100 p-2 mt-6 hover:bg-gray-800">
-          <div className="mr-3">Interested? Learn more!</div>
-          <div>
-            <CircleArrowDown size={20} />
-          </div>
+      <a href="#about" className="mt-8">
+        <button className="flex items-center gap-x-3 rounded-full border border-rule px-4 py-2 text-ink transition-colors hover:border-accent hover:text-accent">
+          <span>View my work</span>
+          <CircleArrowDown size={18} />
         </button>
       </a>
     </div>

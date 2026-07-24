@@ -3,11 +3,15 @@ import FooterInterface from "../types/FooterInterface";
 
 const FooterItem: React.FC<FooterInterface> = ({ name, link, icon: Icon }) => {
   return (
-    <div className="text-sm text-slate-100 font-bold hover:text-slate-400">
-      <a href={link} target="_blank" rel="noreferrer" aria-label={name}>
-        <Icon size={32} />
-      </a>
-    </div>
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={name}
+      className="text-muted transition-colors hover:text-accent"
+    >
+      <Icon size={26} />
+    </a>
   );
 };
 export default FooterItem;

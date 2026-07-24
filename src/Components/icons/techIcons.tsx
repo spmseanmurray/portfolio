@@ -77,10 +77,11 @@ export type TechIcon = {
 };
 
 // Some brand colors (Express, GitHub Copilot) are near-black and disappear
-// against the dark card background, so fall back to a light slate for any
-// mark whose contrast against slate-800 is too low to read.
-const CARD_BG = "#1e293b"; // slate-800
-const DARK_FALLBACK = "#e2e8f0"; // slate-200
+// against the dark card background, so any mark whose contrast against the
+// card surface is too low falls back to the page's ink tone.
+// Keep these in sync with --color-surface and --color-ink in index.css.
+const CARD_BG = "#17171a";
+const DARK_FALLBACK = "#e9e8e6";
 const MIN_CONTRAST = 2;
 
 function luminance(hex: string): number {

@@ -1,15 +1,12 @@
 import React from "react";
+import Section from "./Section";
 import ProjectItem from "./ProjectItem";
 import projectItems from "../config/ProjectConfig";
 
 const Projects: React.FC = () => {
   return (
-    <div
-      id="projects"
-      className="min-h-screen my-20 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">Projects</div>
-      <div className="flex flex-col lg:flex-row items-center">
+    <Section id="projects" title="Projects">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {projectItems.map((item) => (
           <ProjectItem
             key={item.name}
@@ -22,7 +19,7 @@ const Projects: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 

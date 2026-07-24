@@ -13,57 +13,63 @@ const ProjectItem: React.FC<ProjectInterface> = ({
   tech,
 }) => {
   return (
-    <div
-      className="border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5"
-    >
+    <div className="flex flex-col overflow-hidden rounded-xl border border-rule bg-surface">
+      {/*
+        Screenshots vary between roughly 2.1:1 and 2.25:1, so a fixed ratio
+        both reserves space before load and keeps the three cards aligned.
+      */}
       <img
-        className="object-cover rounded-t-2xl border-b-2 border-slate-600"
+        className="aspect-[16/7] w-full border-b border-rule object-cover"
         src={image}
         alt={`${name} screenshot`}
         loading="lazy"
       />
-      <div className="justify-start align-center text-slate-200 p-3">
-        <div className="flex text-xl text-sky-300 font-bold gap-x-3">
-          {name}
-          {github ? (
-            <a
-              href={github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={name + " GitHub repository"}
-            >
-              <GithubIcon className="text-slate-200" size={20} />
-            </a>
-          ) : null}
-          {link ? (
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${name} live site`}
-            >
-              <ExternalLink className="text-slate-200" size={20} />
-            </a>
-          ) : null}
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-start gap-x-3">
+          <h3 className="font-display text-lg font-semibold text-accent">
+            {name}
+          </h3>
+          <div className="ml-auto flex shrink-0 gap-x-3 pt-1">
+            {github ? (
+              <a
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${name} GitHub repository`}
+                className="text-muted transition-colors hover:text-accent"
+              >
+                <GithubIcon size={18} />
+              </a>
+            ) : null}
+            {link ? (
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${name} live site`}
+                className="text-muted transition-colors hover:text-accent"
+              >
+                <ExternalLink size={18} />
+              </a>
+            ) : null}
+          </div>
         </div>
-        <div className="text-m lg:min-h-24 xl:min-h-16">{description}</div>
-      </div>
-      <div className="grid grid-cols-3 sm:grid-cols-6 mx-3 py-2 border-t-2 border-slate-600">
-        {tech.map((t) => {
-          const entry = techIcons[t];
-          if (!entry) return null;
-          const Icon = entry.icon;
-          return (
-            <div key={t} className="col-span-1 items-center flex justify-center">
+        <p className="mt-2 text-sm text-muted">{description}</p>
+        <div className="mt-auto flex flex-wrap gap-4 border-t border-rule pt-4 mt-4">
+          {tech.map((t) => {
+            const entry = techIcons[t];
+            if (!entry) return null;
+            const Icon = entry.icon;
+            return (
               <Icon
-                size={40}
+                key={t}
+                size={26}
                 color={entry.color}
-                className="mb-1"
                 title={entry.label}
               />
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

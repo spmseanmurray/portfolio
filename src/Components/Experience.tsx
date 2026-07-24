@@ -1,24 +1,24 @@
 import React from "react";
+import Section from "./Section";
 import ExperienceItem from "./ExperienceItem";
 import experienceItems from "../config/ExperienceConfig";
 
 const Experience: React.FC = () => {
   return (
-    <div
-      id="experience"
-      className="min-h-screen my-20 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">Experience</div>
-      {experienceItems.map((item) => (
-        <ExperienceItem
-          key={item.company}
-          company={item.company}
-          dates={item.dates}
-          position={item.position}
-          bullets={item.bullets}
-        />
-      ))}
-    </div>
+    <Section id="experience" title="Experience">
+      <div className="flex flex-col gap-6">
+        {experienceItems.map((item) => (
+          // Two entries share the company name, so the dates disambiguate.
+          <ExperienceItem
+            key={`${item.company} ${item.dates}`}
+            company={item.company}
+            dates={item.dates}
+            position={item.position}
+            bullets={item.bullets}
+          />
+        ))}
+      </div>
+    </Section>
   );
 };
 

@@ -3,27 +3,27 @@ import headerItems from "../config/HeaderConfig";
 
 const Header: React.FC = () => {
   return (
-    <div className="sticky top-0 z-20 bg-neutral-900 opacity-90 px-6">
-      <div className="flex flex-row place-content-center sm:place-content-between py-1 border-b-2 border-slate-600">
-        <a href="#top">
-          <div className="flex text-2xl font-bold text-white mx-10">
-            Sean Murray
-          </div>
+    <header className="sticky top-0 z-20 border-b border-rule bg-ground/90 backdrop-blur">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-center px-5 py-3 sm:justify-between">
+        <a
+          href="#top"
+          className="font-display text-xl font-semibold text-ink transition-colors hover:text-accent"
+        >
+          Sean Murray
         </a>
-        <div className="hidden sm:flex md:flex-row items-center ">
+        <div className="hidden items-center gap-x-6 sm:flex">
           {headerItems.map((item) => (
-            <div
+            <a
               key={item.name}
-              className="text-slate-100 px-3 hover:text-slate-400"
+              href={item.link}
+              className="text-sm font-medium text-muted transition-colors hover:text-accent"
             >
-              <div className="text-slate-100 font-bold hover:text-slate-400">
-                <a href={item.link}>{item.name}</a>
-              </div>
-            </div>
+              {item.name}
+            </a>
           ))}
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 };
 

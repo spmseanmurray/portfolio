@@ -1,15 +1,12 @@
 import React from "react";
+import Section from "./Section";
 import SkillItem from "./SkillItem";
 import skillCategories from "../config/SkillConfig";
 
 const Skills: React.FC = () => {
   return (
-    <div
-      id="skills"
-      className="min-h-screen my-20 mx-5 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">Skills</div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-8 mt-4">
+    <Section id="skills" title="Skills">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {skillCategories.map((item) => (
           <SkillItem
             key={item.category}
@@ -18,7 +15,7 @@ const Skills: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 export default Skills;

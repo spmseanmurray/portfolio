@@ -1,16 +1,47 @@
 @import "tailwindcss";
 
+/* Self-hosted variable faces (no external CDN, no font CDN request). */
+@import "@fontsource-variable/source-serif-4";
+@import "@fontsource-variable/source-sans-3";
+
+/*
+ * Design tokens.
+ *
+ * Neutrals are a near-neutral graphite so the moss accent carries the only
+ * real hue on the page. Every value below clears WCAG AA against both the
+ * ground and the raised surface:
+ *   ink 15.40 / muted 6.81 / faint 5.50 / accent 6.24 (on ground)
+ */
+@theme {
+  --color-ground: #111113;
+  --color-surface: #17171a;
+  --color-rule: #2a2a2e;
+  --color-ink: #e9e8e6;
+  --color-muted: #9b9b9f;
+  --color-faint: #8a8a90;
+  --color-accent: #8c9a6b;
+  /* Text laid on top of a filled accent block. */
+  --color-on-accent: #111113;
+
+  --font-display: "Source Serif 4 Variable", Georgia, Cambria, serif;
+  --font-sans: "Source Sans 3 Variable", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+
+  /* Vertical rhythm between major sections, replacing per-section min-heights. */
+  --spacing-section: 7rem;
+}
+
 html {
   scroll-behavior: smooth;
   /* Offset anchor targets so the sticky header doesn't cover section headings. */
-  scroll-padding-top: 3rem;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  background-color: var(--color-ground);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,4 +49,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

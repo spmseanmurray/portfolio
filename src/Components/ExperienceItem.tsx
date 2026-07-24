@@ -9,36 +9,34 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({
   bullets,
 }) => {
   return (
-    <div
-      className={
-        "border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5 md:w-4/5 2xl:w-2/3 md:h-auto"
-      }
-    >
-      <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row justify-between items-center p-3 md:gap-x-8 border-b-2 border-slate-600">
-          <div className="flex-row items-center justify-between md:justify-center">
-            <div className="flex flex-row items-center gap-x-2 ">
-              <img
-                className="w-10 md:w-16 rounded-xl"
-                src={employerLogoMap[company.replaceAll(" ", "").toLowerCase()]}
-                alt={`${company} logo`}
-                loading="lazy"
-              />
-              <div className="text-xl text-slate-200 font-bold"> {company}</div>
-            </div>
-            <div className="text-md text-slate-300 md:hidden text-center">
-              {dates}
-            </div>
-          </div>
-          <div className="text-xl text-sky-300 font-bold"> {position}</div>
-          <div className="text-md text-slate-300 hidden md:flex">{dates}</div>
+    <div className="rounded-xl border border-rule bg-surface p-5">
+      <div className="flex flex-col items-center gap-2 border-b border-rule pb-3 md:flex-row md:justify-between md:gap-x-8">
+        <div className="flex flex-row items-center gap-x-3">
+          {/*
+            All employer logos are square. The explicit ratio reserves the box
+            before the file arrives -- without it the image collapses to zero
+            height, which also stops lazy loading from ever firing.
+          */}
+          <img
+            className="aspect-square w-10 rounded-lg object-contain md:w-14"
+            src={employerLogoMap[company.replaceAll(" ", "").toLowerCase()]}
+            alt={`${company} logo`}
+            width={56}
+            height={56}
+            loading="lazy"
+          />
+          <span className="font-display text-xl font-semibold text-ink">
+            {company}
+          </span>
         </div>
-        <ul className="text-m text-slate-300 mx-4 my-2 list-disc list-outside pl-4 space-y-1">
-          {bullets.map((bullet) => (
-            <li key={bullet}>{bullet}</li>
-          ))}
-        </ul>
+        <span className="font-semibold text-accent">{position}</span>
+        <span className="text-sm text-muted tabular-nums">{dates}</span>
       </div>
+      <ul className="mt-3 list-outside list-disc space-y-2 pl-4 text-muted marker:text-faint">
+        {bullets.map((bullet) => (
+          <li key={bullet}>{bullet}</li>
+        ))}
+      </ul>
     </div>
   );
 };

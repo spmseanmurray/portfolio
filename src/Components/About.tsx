@@ -1,26 +1,25 @@
 import React from "react";
+import Section from "./Section";
 import ProfileImg from "../images/SquareProfile.jpg";
 
 const About: React.FC = () => {
   return (
-    <div
-      id="about"
-      className="min-h-screen my-20 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">About</div>
-      <div className="flex flex-col lg:flex-row space-x-4 space-y-4 p-4 m-4 items-center border-2 bg-slate-800 border-slate-600 rounded-2xl">
+    <Section id="about" title="About">
+      <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
         <img
-          className="w-3/5 sm:max-w-xs h-auto rounded-full border-2 border-black"
+          className="aspect-square w-3/5 shrink-0 rounded-full border border-rule object-cover sm:max-w-xs"
           src={ProfileImg}
           alt="Sean Murray"
+          width={320}
+          height={320}
         />
-        <div className="max-w-prose text-slate-100 space-y-4">
+        <div className="max-w-prose space-y-4 text-muted">
           <p>
             Hello, I'm Sean Murray — a software engineer in Boulder, Colorado,
             with six years of full stack experience. I started out in Aerospace
             Engineering at North Carolina State University, and an internship at
-            SpaceX kindled my interest in pushing technological boundaries. After
-            graduating I joined the startup world at Fathom5, a maritime
+            SpaceX kindled my interest in pushing technological boundaries.
+            After graduating I joined the startup world at Fathom5, a maritime
             cyber-security venture, which let me turn my aerospace roots into a
             career in software.
           </p>
@@ -34,14 +33,14 @@ const About: React.FC = () => {
             Associate Cloud Engineer.
           </p>
           <p>
-            Beyond coding, you'll likely find me somewhere in the great outdoors.
-            Whether I'm hitting the pavement for a run, traversing hiking trails,
-            or exploring the wilderness on backpacking trips, I love to be
-            outside.
+            Beyond coding, you'll likely find me somewhere in the great
+            outdoors. Whether I'm hitting the pavement for a run, traversing
+            hiking trails, or exploring the wilderness on backpacking trips, I
+            love to be outside.
           </p>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 export default About;
