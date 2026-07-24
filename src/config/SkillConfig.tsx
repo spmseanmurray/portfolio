@@ -2,24 +2,51 @@ import SkillInterface from "../types/SkillInterface";
 
 const skillCategories: SkillInterface[] = [
   {
-    category: "Front End Languages",
-    skills: ["javascript", "html5", "css3", "typescript"],
+    category: "Languages",
+    skills: [
+      "golang",
+      "javascript",
+      "typescript",
+      "java",
+      "python",
+      "sql",
+      "html5",
+      "css3",
+    ],
   },
   {
-    category: "Front End Frameworks and Libraries",
-    skills: ["react", "material-ui", "tailwindcss", "antd"],
+    category: "Frameworks and Libraries",
+    skills: [
+      "react",
+      "nodejs",
+      "express",
+      "springboot",
+      "graphql",
+      "tailwindcss",
+    ],
   },
   {
-    category: "Back End Languages and Databases",
-    skills: ["nodejs", "golang", "postgresql", "mongodb"],
+    category: "Data and Pipelines",
+    skills: [
+      "postgresql",
+      "mongodb",
+      "bigquery",
+      "pubsub",
+      "airflow",
+      "dataflow",
+    ],
   },
   {
-    category: "Tools",
-    skills: ["git", "gh-actions", "gcp", "jira"],
+    category: "Cloud and Infrastructure",
+    skills: ["gcp", "docker", "kubernetes", "terraform"],
   },
   {
-    category: "Testing",
-    skills: ["jest", "cypress", "react-testing", "msw"],
+    category: "CI/CD and Observability",
+    skills: ["git", "gh-actions", "prometheus", "grafana"],
+  },
+  {
+    category: "AI Tooling",
+    skills: ["claude", "github-copilot", "codex"],
   },
 ];
 export default skillCategories;

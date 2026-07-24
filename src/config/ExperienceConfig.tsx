@@ -6,10 +6,11 @@ const experienceItems: ExperienceInterface[] = [
     dates: "Oct 2023 - Present",
     position: "Sr. Software Engineer",
     bullets: [
-      "Led on time delivery of project to display personalized product listing advertisments (PLAs) within email campaigns which results in ~$25,000/week in ad spend from ~20 million impressions/week",
-      "Facilitated Email PLAs project success by coordinating internal technical planning/development, driving communication with third-parties, and setting up robust monitoring and alerting",
+      "Spearheaded the architecture, development, and deployment of a centralized real-time machine learning-based sponsored product recommendation system, delivering a scalable platform that enabled five distinct recommendation strategies to be A/B tested and rolled out within two quarters, driving significant lifts in click-through and impression rates across multiple site pages",
+      "Architected an AI agentic system using google-adk and CopilotKit, delivering an interactive data portal that streamlined performance data analysis for internal business stakeholders",
+      "Led on time delivery of project to display personalized product listing advertisements (PLAs) within email campaigns which results in ~$25,000/week in ad spend from ~20 million impressions/week",
       "Identified and resolved a redirect bug which had existed for ~2 years and resulted in ~$500,000 in lost revenue",
-      "Continuously supported the learning and growth of junior engineers through mentoring, support on tickets, and timely/constructive PR feedback",
+      "Supported the growth of junior engineers through mentoring, pairing on tickets, and constructive PR feedback",
     ],
   },
   {
@@ -27,7 +28,7 @@ const experienceItems: ExperienceInterface[] = [
     dates: "July 2021 - March 2022",
     position: "Jr. Design Engineer",
     bullets: [
-      "Developed a full stack application in a fast-paced start-up environment to manage Navy sponsored hack-a-thons",
+      "Built and launched a full stack web application in collaboration with UI/UX partners in a fast-paced start-up environment, leveraging React, Go, and PostgreSQL to manage Navy-sponsored hackathons",
       "Collaborated with UI/UX team to create a React frontend with clear information architecture and cohesive style",
       "Designed Go microservice using gin framework for interfacing with PostgreSQL database",
     ],

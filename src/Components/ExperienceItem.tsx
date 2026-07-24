@@ -21,7 +21,8 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({
               <img
                 className="w-10 md:w-16 rounded-xl"
                 src={employerLogoMap[company.replaceAll(" ", "").toLowerCase()]}
-                alt={company + "image"}
+                alt={`${company} logo`}
+                loading="lazy"
               />
               <div className="text-xl text-slate-200 font-bold"> {company}</div>
             </div>
@@ -32,11 +33,11 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({
           <div className="text-xl text-sky-300 font-bold"> {position}</div>
           <div className="text-md text-slate-300 hidden md:flex">{dates}</div>
         </div>
-        <div className="text-m text-slate-300 mx-4 my-2">
-          {bullets.map((bullet, ind) => {
-            return <div key={ind}>- {bullet}</div>;
-          })}
-        </div>
+        <ul className="text-m text-slate-300 mx-4 my-2 list-disc list-outside pl-4 space-y-1">
+          {bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

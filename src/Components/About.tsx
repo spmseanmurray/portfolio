@@ -12,27 +12,33 @@ const About: React.FC = () => {
         <img
           className="w-3/5 sm:max-w-xs h-auto rounded-full border-2 border-black"
           src={ProfileImg}
-          alt="Profile"
+          alt="Sean Murray"
         />
-        <div className="max-w-prose text-slate-100">
-          Hello, I'm Sean Murray—a proud graduate in Aerospace Engineering from
-          North Carolina State University. My journey began with notable
-          internships at both BMW and SpaceX, kindling my intrigue for pushing
-          technological boundaries and embracing novel challenges. Following
-          graduation, I immersed myself in the dynamic startup world at Fathom5, 
-          a maritime cyber-security venture. This experience enabled me to seamlessly 
-          transition from my aerospace roots into the realm of full-stack software engineering.
-          <div className="mt-4" />
-          Today my professional pursuits continue as a Sr. Software Engineer at
-          The Home Depot. I dedicate myself to honing and expanding my technical
-          expertise while supporting the evolution of a supplier-centric retail
-          media platform. This platform orchestrates self-service marketing
-          campaign launches, meticulous performance tracking, and streamlined
-          advertisement management.
-          <div className="mt-4" />
-          Beyond coding, you'll likely find me somewhere in the great outdoors.
-          Whether I'm hitting the pavement for a run, traversing hiking trails,
-          or exploring the wilderness on backpacking trips, I love to be outside.
+        <div className="max-w-prose text-slate-100 space-y-4">
+          <p>
+            Hello, I'm Sean Murray — a software engineer in Boulder, Colorado,
+            with six years of full stack experience. I started out in Aerospace
+            Engineering at North Carolina State University, and an internship at
+            SpaceX kindled my interest in pushing technological boundaries. After
+            graduating I joined the startup world at Fathom5, a maritime
+            cyber-security venture, which let me turn my aerospace roots into a
+            career in software.
+          </p>
+          <p>
+            Today I'm a Sr. Software Engineer at The Home Depot, where I work on
+            the retail media platform that powers supplier advertising. Most
+            recently I led the architecture and rollout of a real-time, machine
+            learning-based sponsored product recommendation system, and built an
+            AI agentic data portal that makes campaign performance easier for
+            business stakeholders to explore. I'm also a certified Google
+            Associate Cloud Engineer.
+          </p>
+          <p>
+            Beyond coding, you'll likely find me somewhere in the great outdoors.
+            Whether I'm hitting the pavement for a run, traversing hiking trails,
+            or exploring the wilderness on backpacking trips, I love to be
+            outside.
+          </p>
         </div>
       </div>
     </div>

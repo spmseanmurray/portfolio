@@ -19,7 +19,8 @@ const ProjectItem: React.FC<ProjectInterface> = ({
       <img
         className="object-cover rounded-t-2xl border-b-2 border-slate-600"
         src={image}
-        alt={name + "image"}
+        alt={`${name} screenshot`}
+        loading="lazy"
       />
       <div className="justify-start align-center text-slate-200 p-3">
         <div className="flex text-xl text-sky-300 font-bold gap-x-3">
@@ -34,14 +35,16 @@ const ProjectItem: React.FC<ProjectInterface> = ({
               <GithubIcon className="text-slate-200" size={20} />
             </a>
           ) : null}
-          <a
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={name + " live site"}
-          >
-            <ExternalLink className="text-slate-200" size={20} />
-          </a>
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} live site`}
+            >
+              <ExternalLink className="text-slate-200" size={20} />
+            </a>
+          ) : null}
         </div>
         <div className="text-m lg:min-h-24 xl:min-h-16">{description}</div>
       </div>
@@ -52,7 +55,12 @@ const ProjectItem: React.FC<ProjectInterface> = ({
           const Icon = entry.icon;
           return (
             <div key={t} className="col-span-1 items-center flex justify-center">
-              <Icon size={40} color={entry.hex} className="mb-1" title={t} />
+              <Icon
+                size={40}
+                color={entry.color}
+                className="mb-1"
+                title={entry.label}
+              />
             </div>
           );
         })}
