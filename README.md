@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# Portfolio — spmseanmurray.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site for Sean Murray. A single-page React application:
+a hero followed by About, Experience, Projects, and Skills sections with
+sticky in-page anchor navigation.
 
-## Available Scripts
+## Tech stack
 
-In the project directory, you can run:
+| Concern | Choice |
+| --- | --- |
+| Build tool | [Vite](https://vitejs.dev/) 7 |
+| UI library | [React](https://react.dev/) 19 |
+| Language | [TypeScript](https://www.typescriptlang.org/) 5 |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) 4 (via `@tailwindcss/vite`) |
+| Icons | [lucide-react](https://lucide.dev/) + vendored brand SVGs (`src/Components/icons/BrandIcons.tsx`) |
+| Hosting | [Render](https://render.com/) static site (auto-deploy on push to `main`) |
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Node.js ≥ 20.19** (the repo pins Node 24 via [`.nvmrc`](.nvmrc); run `nvm use` if you use nvm).
+- npm (ships with Node).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting started
 
-### `npm test`
+```bash
+npm install     # install dependencies
+npm run dev      # start the dev server at http://localhost:3000
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Scripts
 
-### `npm run build`
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server (also aliased as `npm start`). |
+| `npm run build` | Type-agnostic production build to `dist/`. |
+| `npm run preview` | Serve the built `dist/` locally to sanity-check a production build. |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Type-check without emitting: `npx tsc --noEmit`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+  App.tsx              # Composes the single page: Header + Hero + sections + Footer
+  index.tsx            # Entry point (createRoot)
+  index.css            # Tailwind import + global styles / smooth-scroll behavior
+  Components/          # Presentational components (Header, Hero, About, Experience, …)
+    icons/BrandIcons.tsx  # Vendored GitHub/LinkedIn SVGs (not in icon libraries)
+  config/              # Site content as typed data (see below)
+  types/               # TypeScript interfaces for the config data
+  images/              # Profile photo, project screenshots, employer + tech logos
+  utils/assets.ts      # import.meta.glob maps for logos referenced by name
+```
 
-### `npm run eject`
+## Editing content
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Content is **data-driven** — most updates are edits to the files in
+[`src/config/`](src/config), no component changes needed:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `ExperienceConfig.tsx` — work history (company, dates, position, bullets)
+- `ProjectConfig.tsx` — projects (name, description, image, links, tech tags)
+- `SkillConfig.tsx` — skill categories and the tech logos in each
+- `HeaderConfig.tsx` — nav items and their in-page anchor targets
+- `FooterConfig.tsx` — contact/social links and their icons
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Tech and employer logos are looked up by name at runtime through
+`src/utils/assets.ts`, which globs the PNGs under `src/images/`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Deployment
 
-## Learn More
+The site is hosted on **Render** as a static site and **auto-deploys on
+every push to `main`**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **SPA fallback:** a rewrite rule `/*  →  /index.html` (Action: Rewrite)
+  so any deep link / hard refresh serves the app instead of a 404.
