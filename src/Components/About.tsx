@@ -30,7 +30,8 @@ const About: React.FC = () => {
             recently I led the architecture and rollout of a real-time, machine
             learning-based sponsored product recommendation system, and built an
             AI agentic data portal that makes campaign performance easier for
-            business stakeholders to explore.
+            business stakeholders to explore. I'm also a certified Google
+            Associate Cloud Engineer.
           </p>
           <p>
             Beyond coding, you'll likely find me somewhere in the great outdoors.
