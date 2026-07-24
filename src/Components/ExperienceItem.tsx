@@ -11,7 +11,7 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({
   return (
     <div
       className={
-        "border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5 md:w-4/5 2xl:w-2/3 3xl:w-1/2 md:h-auto"
+        "border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5 md:w-4/5 2xl:w-2/3 md:h-auto"
       }
     >
       <div className="flex flex-col">
