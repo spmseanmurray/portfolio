@@ -6,28 +6,54 @@ const Header: React.FC = () => {
   const [activeId, setActiveId] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Highlight whichever section currently occupies the upper band of the
-  // viewport, so the nav reflects position without any scroll math.
+  // Highlight the section the reader is currently in.
+  //
+  // This is deliberately scroll math rather than an IntersectionObserver
+  // band. The last section can never reach a band anchored near the top of
+  // the viewport -- there is no content below it to scroll it up there -- so
+  // an observer leaves it permanently unhighlighted. Reaching the bottom of
+  // the page is therefore special-cased.
   useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
-
     const ids = headerItems.map((item) => item.link.replace("#", ""));
-    const nodes = ids
-      .map((id) => document.getElementById(id))
-      .filter((node): node is HTMLElement => node !== null);
+    let frame = 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length > 0) setActiveId(visible[0].target.id);
-      },
-      { rootMargin: "-20% 0px -70% 0px" }
-    );
+    const update = () => {
+      frame = 0;
+      const doc = document.documentElement;
+      // Within a quarter viewport of the end counts as being in the final
+      // section: by then it fills most of the screen, and an exact-bottom
+      // test would only highlight it in the last handful of pixels.
+      const nearBottom =
+        window.scrollY + window.innerHeight >=
+        doc.scrollHeight - window.innerHeight * 0.25;
 
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
+      if (nearBottom) {
+        setActiveId(ids[ids.length - 1]);
+        return;
+      }
+
+      const line = window.scrollY + window.innerHeight * 0.3;
+      let current = "";
+      ids.forEach((id) => {
+        const node = document.getElementById(id);
+        if (node && node.offsetTop <= line) current = id;
+      });
+      setActiveId(current);
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (

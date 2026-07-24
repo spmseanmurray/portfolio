@@ -5,13 +5,12 @@ const Hero: React.FC = () => {
   return (
     <div
       id="top"
-      className="flex items-center bg-ground px-5 py-28 lg:py-40"
+      className="flex min-h-svh items-center bg-ground px-5 py-24"
     >
       {/*
-        Sized by padding rather than viewport height. A vh-based hero puts a
-        fixed slab of content in a box that grows with the screen, so the
-        taller the display the emptier it looks -- 71% dead space at 1060px.
-        Padding keeps that gap constant instead.
+        The hero deliberately holds a full screen: the "View my work" cue
+        only means anything if the work is below the fold. svh rather than
+        vh so mobile browser chrome doesn't push the CTA out of view.
       */}
       <div className="mx-auto w-full max-w-6xl">
         {/*
