@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown } from "@fortawesome/free-regular-svg-icons";
+import { CircleArrowDown } from "lucide-react";
 
 const Landing: React.FC = () => {
   return (
@@ -16,7 +15,7 @@ const Landing: React.FC = () => {
         <button className="flex justify-center border-2 rounded-2xl border-slate-400 text-slate-200 hover:text-slate-100 p-2 mt-5 hover:bg-gray-800">
           <div className="mr-3">Interested? Learn more!</div>
           <div>
-            <FontAwesomeIcon icon={faArrowAltCircleDown} size="lg" />
+            <CircleArrowDown size={20} />
           </div>
         </button>
       </Link>

@@ -1,8 +1,7 @@
 import React from "react";
 import ProjectInterface from "../types/ProjectInterface";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { ExternalLink } from "lucide-react";
+import { GithubIcon } from "./icons/BrandIcons";
 import { techIconMap } from "../utils/assets";
 
 const ProjectItem: React.FC<ProjectInterface> = ({
@@ -25,21 +24,23 @@ const ProjectItem: React.FC<ProjectInterface> = ({
       <div className="justify-start align-center text-slate-200 p-3">
         <div className="flex text-xl text-sky-300 font-bold gap-x-3">
           {name}
-          {
-            github ?    
-            <a href={github} target="_blank" rel="noreferrer">
-              <FontAwesomeIcon
-                className="text-slate-200"
-                icon={faGithubAlt}
-              />
-            </a> 
-            : null
-          }
-          <a href={link} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon
-              className="text-slate-200"
-              icon={faExternalLinkAlt}
-            />
+          {github ? (
+            <a
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={name + " GitHub repository"}
+            >
+              <GithubIcon className="text-slate-200" size={20} />
+            </a>
+          ) : null}
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={name + " live site"}
+          >
+            <ExternalLink className="text-slate-200" size={20} />
           </a>
         </div>
         <div className="text-m lg:h-24 xl:h-16">{description}</div>
