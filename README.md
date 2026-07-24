@@ -12,7 +12,7 @@ sticky in-page anchor navigation.
 | UI library | [React](https://react.dev/) 19 |
 | Language | [TypeScript](https://www.typescriptlang.org/) 5 |
 | Styling | [Tailwind CSS](https://tailwindcss.com/) 4 (via `@tailwindcss/vite`) |
-| Icons | [lucide-react](https://lucide.dev/) + vendored brand SVGs (`src/Components/icons/BrandIcons.tsx`) |
+| Icons | [lucide-react](https://lucide.dev/) (UI) + [simple-icons](https://simpleicons.org/) via `@icons-pack/react-simple-icons` (tech/brand logos) |
 | Hosting | [Render](https://render.com/) static site (auto-deploy on push to `main`) |
 
 ## Prerequisites
@@ -32,10 +32,11 @@ npm run dev      # start the dev server at http://localhost:3000
 | Script | Description |
 | --- | --- |
 | `npm run dev` | Start the Vite dev server (also aliased as `npm start`). |
-| `npm run build` | Type-agnostic production build to `dist/`. |
+| `npm run build` | Production build to `dist/`. |
 | `npm run preview` | Serve the built `dist/` locally to sanity-check a production build. |
 
-Type-check without emitting: `npx tsc --noEmit`.
+`vite build` strips types without checking them, so type errors will not fail
+the build. Type-check separately with `npx tsc --noEmit`.
 
 ## Project structure
 
@@ -46,10 +47,11 @@ src/
   index.css            # Tailwind import + global styles / smooth-scroll behavior
   Components/          # Presentational components (Header, Hero, About, Experience, …)
     icons/BrandIcons.tsx  # Vendored GitHub/LinkedIn SVGs (not in icon libraries)
+    icons/techIcons.tsx   # Maps tech slugs -> simple-icons component + brand color
   config/              # Site content as typed data (see below)
   types/               # TypeScript interfaces for the config data
-  images/              # Profile photo, project screenshots, employer + tech logos
-  utils/assets.ts      # import.meta.glob maps for logos referenced by name
+  images/              # Profile photo, project screenshots, employer logos
+  utils/assets.ts      # import.meta.glob map for employer logos referenced by name
 ```
 
 ## Editing content
@@ -59,12 +61,24 @@ Content is **data-driven** — most updates are edits to the files in
 
 - `ExperienceConfig.tsx` — work history (company, dates, position, bullets)
 - `ProjectConfig.tsx` — projects (name, description, image, links, tech tags)
-- `SkillConfig.tsx` — skill categories and the tech logos in each
+- `SkillConfig.tsx` — skill categories and the tech icon slugs in each
 - `HeaderConfig.tsx` — nav items and their in-page anchor targets
 - `FooterConfig.tsx` — contact/social links and their icons
 
-Tech and employer logos are looked up by name at runtime through
-`src/utils/assets.ts`, which globs the PNGs under `src/images/`.
+### Logos
+
+Logos come from two places:
+
+- **Tech/skill logos** (the `tech` and `skills` slugs in the configs) render as
+  vector [simple-icons](https://simpleicons.org/) components in their official
+  brand color, via the registry in
+  [`src/Components/icons/techIcons.tsx`](src/Components/icons/techIcons.tsx).
+  To use a new tech tag, add its slug there — a slug with no registry entry
+  renders no icon. Note simple-icons drops brands over time (Heroku, for
+  example, is no longer included).
+- **Employer logos** stay as real multi-color PNGs under
+  `src/images/employers/`, looked up by company name at runtime through
+  `src/utils/assets.ts`.
 
 ## Deployment
 
