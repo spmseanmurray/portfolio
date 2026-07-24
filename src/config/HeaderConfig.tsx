@@ -3,19 +3,19 @@ import HeaderInterface from "../types/HeaderInterface";
 const headerItems: HeaderInterface[] = [
   {
     name: "About",
-    link: "/sections/#about",
+    link: "#about",
   },
   {
     name: "Experience",
-    link: "/sections/#experience",
+    link: "#experience",
   },
   {
     name: "Projects",
-    link: "/sections/#projects",
+    link: "#projects",
   },
   {
     name: "Skills",
-    link: "/sections/#skills",
+    link: "#skills",
   },
 ];
 export default headerItems;

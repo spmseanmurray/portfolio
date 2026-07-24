@@ -1,25 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { CircleArrowDown } from "lucide-react";
 
-const Landing: React.FC = () => {
+const Hero: React.FC = () => {
   return (
-    <div className=" flex flex-col items-center justify-center h-screen bg-slate-900">
+    <div
+      id="top"
+      className="flex flex-col items-center justify-center h-screen bg-slate-900"
+    >
       <div className="text-6xl text-center font-bold text-sky-300 mx-14">
         SEAN MURRAY
       </div>
       <div className="text-2xl text-center font-bold text-slate-200 mx-5">
         Aerospace engineer turned full stack software engineer
       </div>
-      <Link to="/sections">
+      <a href="#about">
         <button className="flex justify-center border-2 rounded-2xl border-slate-400 text-slate-200 hover:text-slate-100 p-2 mt-5 hover:bg-gray-800">
           <div className="mr-3">Interested? Learn more!</div>
           <div>
             <CircleArrowDown size={20} />
           </div>
         </button>
-      </Link>
+      </a>
     </div>
   );
 };
-export default Landing;
+export default Hero;
