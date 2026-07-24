@@ -32,7 +32,7 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({
         <span className="font-semibold text-accent">{position}</span>
         <span className="text-sm text-muted tabular-nums">{dates}</span>
       </div>
-      <ul className="mt-3 list-outside list-disc space-y-2 pl-4 text-muted marker:text-faint">
+      <ul className="mt-3 list-outside list-disc space-y-2 pl-4 text-body marker:text-faint">
         {bullets.map((bullet) => (
           <li key={bullet}>{bullet}</li>
         ))}

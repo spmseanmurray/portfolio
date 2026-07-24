@@ -13,7 +13,7 @@ const About: React.FC = () => {
           width={320}
           height={320}
         />
-        <div className="max-w-prose space-y-4 text-muted">
+        <div className="max-w-prose space-y-4 text-body">
           <p>
             Hello, I'm Sean Murray — a software engineer in Boulder, Colorado,
             with six years of full stack experience. I started out in Aerospace

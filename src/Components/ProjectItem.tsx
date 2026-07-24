@@ -54,7 +54,7 @@ const ProjectItem: React.FC<ProjectInterface> = ({
             ) : null}
           </div>
         </div>
-        <p className="mt-2 text-sm text-muted">{description}</p>
+        <p className="mt-2 text-sm text-body">{description}</p>
         <div className="mt-auto flex flex-wrap gap-4 border-t border-rule pt-4 mt-4">
           {tech.map((t) => {
             const entry = techIcons[t];

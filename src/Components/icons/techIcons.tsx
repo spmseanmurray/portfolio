@@ -80,8 +80,8 @@ export type TechIcon = {
 // against the dark card background, so any mark whose contrast against the
 // card surface is too low falls back to the page's ink tone.
 // Keep these in sync with --color-surface and --color-ink in index.css.
-const CARD_BG = "#17171a";
-const DARK_FALLBACK = "#e9e8e6";
+const CARD_BG = "#262630";
+const DARK_FALLBACK = "#f2f1ef";
 const MIN_CONTRAST = 2;
 
 function luminance(hex: string): number {

@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
       <p className="mt-4 text-xl font-semibold text-accent">
         Aerospace engineer turned full stack software engineer
       </p>
-      <p className="mt-4 max-w-prose text-muted">
+      <p className="mt-4 max-w-prose text-body">
         Six years of full stack experience, delivering scalable solutions to
         complex business challenges through technical leadership.
       </p>
