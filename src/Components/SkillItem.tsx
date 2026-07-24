@@ -1,5 +1,6 @@
 import React from "react";
 import SkillInterface from "../types/SkillInterface";
+import { techIconMap } from "../utils/assets";
 
 const SkillItem: React.FC<SkillInterface> = ({ category, skills }) => {
   return (
@@ -10,7 +11,7 @@ const SkillItem: React.FC<SkillInterface> = ({ category, skills }) => {
         </div>
         <div className="flex flex-wrap items-center m-2 justify-evenly border-t-2 border-slate-600">
           {skills.map((skill) => {
-            const skillIcon = require("../images/tech/" + skill + ".png");
+            const skillIcon = techIconMap[skill];
             return (
               <div
                 key={skill}

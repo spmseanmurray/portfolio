@@ -1,7 +1,7 @@
 import React from "react";
+import ProfileImg from "../images/SquareProfile.jpg";
 
 const About: React.FC = () => {
-  const ProfileImg = require("../images/SquareProfile.jpg");
   return (
     <div
       id="about"

@@ -3,6 +3,7 @@ import ProjectInterface from "../types/ProjectInterface";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { techIconMap } from "../utils/assets";
 
 const ProjectItem: React.FC<ProjectInterface> = ({
   name,
@@ -45,7 +46,7 @@ const ProjectItem: React.FC<ProjectInterface> = ({
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-6 mx-3 py-2 border-t-2 border-slate-600">
         {tech.map((tech) => {
-          const techIcon = require("../images/tech/" + tech + ".png");
+          const techIcon = techIconMap[tech];
           return (
             <div
               key={tech}

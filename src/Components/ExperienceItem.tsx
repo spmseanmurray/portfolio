@@ -1,5 +1,6 @@
 import React from "react";
 import ExperienceInterface from "../types/ExperienceInterface";
+import { employerLogoMap } from "../utils/assets";
 
 const ExperienceItem: React.FC<ExperienceInterface> = ({
   company,
@@ -19,9 +20,7 @@ const ExperienceItem: React.FC<ExperienceInterface> = ({
             <div className="flex flex-row items-center gap-x-2 ">
               <img
                 className="w-10 md:w-16 rounded-xl"
-                src={require("../images/employers/" +
-                  company.replaceAll(" ", "").toLowerCase() +
-                  ".png")}
+                src={employerLogoMap[company.replaceAll(" ", "").toLowerCase()]}
                 alt={company + "image"}
               />
               <div className="text-xl text-slate-200 font-bold"> {company}</div>
