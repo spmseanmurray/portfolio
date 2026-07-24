@@ -1,22 +1,27 @@
 import React from "react";
 import Section from "./Section";
+import Reveal from "./Reveal";
 import ProjectItem from "./ProjectItem";
 import projectItems from "../config/ProjectConfig";
 
 const Projects: React.FC = () => {
   return (
     <Section id="projects" title="Projects">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {projectItems.map((item) => (
-          <ProjectItem
-            key={item.name}
-            name={item.name}
-            description={item.description}
-            image={item.image}
-            link={item.link}
-            github={item.github}
-            tech={item.tech}
-          />
+      <div className="divide-y divide-rule">
+        {projectItems.map((item, index) => (
+          <div key={item.name} className="py-8 first:pt-0 last:pb-0">
+            <Reveal delay={index * 60}>
+              <ProjectItem
+                name={item.name}
+                context={item.context}
+                description={item.description}
+                image={item.image}
+                link={item.link}
+                github={item.github}
+                tech={item.tech}
+              />
+            </Reveal>
+          </div>
         ))}
       </div>
     </Section>

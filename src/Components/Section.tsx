@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from "./Reveal";
 
 interface SectionProps {
   id: string;
@@ -9,19 +10,21 @@ interface SectionProps {
 /**
  * Shared wrapper for the page's major sections.
  *
- * Sections size to their content rather than being pinned to the viewport,
- * which is what previously left the hero and projects two-thirds empty while
- * skills ran wall to wall. Vertical rhythm comes from a single token so every
- * section breathes identically.
+ * Section names are set as quiet labels rather than large headings: in this
+ * layout the loud type is reserved for content — employers, project names —
+ * so the page reads as a document rather than a stack of billboards. They stay
+ * real <h2> elements for structure regardless of how they're styled.
  */
 const Section: React.FC<SectionProps> = ({ id, title, children }) => {
   return (
-    <section id={id} className="py-section scroll-mt-24">
-      <div className="mx-auto w-full max-w-6xl px-5">
-        <h2 className="font-display text-3xl font-semibold tracking-tight text-ink">
-          {title}
-        </h2>
-        <div className="mt-8">{children}</div>
+    <section id={id} className="scroll-mt-24 py-section">
+      <div className="mx-auto w-full max-w-5xl px-5">
+        <Reveal>
+          <h2 className="border-b border-rule pb-3 text-xs uppercase tracking-[0.18em] text-faint">
+            {title}
+          </h2>
+        </Reveal>
+        <div className="mt-10">{children}</div>
       </div>
     </section>
   );

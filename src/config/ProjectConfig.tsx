@@ -5,7 +5,9 @@ import BudgetingApp from "../images/BudgetingApp.png";
 
 const projectItems: ProjectInterface[] = [
   {
-    name: "Earth Hero - Volunteer Senior Web Developer",
+    // The role moved into `context`, so the name can just be the project.
+    name: "Earth Hero",
+    context: "Volunteer Sr. Web Developer",
     description:
       "Earth Hero provides scientifically grounded tools and ideas to empower all who want to reduce emissions, improve lives, and care for our shared planet.",
     image: EarthHero,
@@ -14,6 +16,7 @@ const projectItems: ProjectInterface[] = [
   },
   {
     name: "Triathlon Training Analysis",
+    context: "Personal project",
     description:
       "Interfaced with the Strava fitness app REST API using OAuth 2.0 authentication to access athlete activity data and provide insightful time-series training data and visualization",
     image: TrainingLog,
@@ -23,6 +26,7 @@ const projectItems: ProjectInterface[] = [
   },
   {
     name: "Budget Tracking",
+    context: "Personal project",
     description:
       "Co-developed financial tracking web application which records and analyzes income and expenses by category to provide an improved personal budgeting experience over previous spreadsheet solution",
     image: BudgetingApp,

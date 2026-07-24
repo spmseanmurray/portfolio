@@ -1,18 +1,19 @@
 import React from "react";
 import Section from "./Section";
+import Reveal from "./Reveal";
 import SkillItem from "./SkillItem";
 import skillCategories from "../config/SkillConfig";
 
 const Skills: React.FC = () => {
   return (
     <Section id="skills" title="Skills">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {skillCategories.map((item) => (
-          <SkillItem
-            key={item.category}
-            category={item.category}
-            skills={item.skills}
-          />
+      <div className="divide-y divide-rule">
+        {skillCategories.map((item, index) => (
+          <div key={item.category} className="py-6 first:pt-0 last:pb-0">
+            <Reveal delay={index * 50}>
+              <SkillItem category={item.category} skills={item.skills} />
+            </Reveal>
+          </div>
         ))}
       </div>
     </Section>

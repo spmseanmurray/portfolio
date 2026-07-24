@@ -1,35 +1,52 @@
 import React from "react";
-import { CircleArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
     <div
       id="top"
-      className="flex min-h-[80vh] flex-col items-center justify-center bg-ground px-5 py-24 text-center"
+      className="flex min-h-[78vh] items-center bg-ground px-5 py-24"
     >
-      <h1 className="font-display text-6xl font-semibold tracking-tight text-ink">
-        Sean Murray
-      </h1>
-      <p className="mt-4 text-xl font-semibold text-accent">
-        Aerospace engineer turned full stack software engineer
-      </p>
-      <p className="mt-4 max-w-prose text-body">
-        Six years of full stack experience, delivering scalable solutions to
-        complex business challenges through technical leadership.
-      </p>
-      <p className="mt-6 flex items-center gap-x-2 text-sm text-muted">
-        <span
-          className="h-2 w-2 rounded-full bg-accent"
-          aria-hidden="true"
-        />
-        Open to new opportunities
-      </p>
-      <a href="#about" className="mt-8">
-        <button className="flex items-center gap-x-3 rounded-full border border-rule px-4 py-2 text-ink transition-colors hover:border-accent hover:text-accent">
-          <span>View my work</span>
-          <CircleArrowDown size={18} />
-        </button>
-      </a>
+      <div className="mx-auto w-full max-w-5xl">
+        {/*
+          The serif display and painted accent mark carry the hero, but the
+          name stays on one line at a moderate scale rather than stacking --
+          the stacked treatment reads as a statement piece, which is louder
+          than this page wants to be.
+        */}
+        <h1 className="font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl">
+          Sean Murray
+        </h1>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink">
+          Aerospace engineer turned{" "}
+          <span className="bg-accent px-2 font-semibold text-on-accent">
+            full stack software engineer
+          </span>
+        </p>
+        <p className="mt-5 max-w-xl leading-relaxed text-body">
+          Six years of full stack experience, delivering scalable solutions to
+          complex business challenges through technical leadership.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            href="#experience"
+            className="group inline-flex items-center gap-x-2 border-b border-accent pb-1 text-sm text-ink transition-colors hover:text-accent"
+          >
+            View my work
+            <ArrowDown
+              size={16}
+              className="transition-transform group-hover:translate-y-0.5 motion-reduce:transition-none"
+            />
+          </a>
+          <p className="flex items-center gap-x-2 text-sm text-muted">
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-accent"
+              aria-hidden="true"
+            />
+            Open to new opportunities
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

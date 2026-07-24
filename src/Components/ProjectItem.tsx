@@ -2,10 +2,12 @@ import React from "react";
 import ProjectInterface from "../types/ProjectInterface";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
+import RailRow from "./RailRow";
 import { techIcons } from "./icons/techIcons";
 
 const ProjectItem: React.FC<ProjectInterface> = ({
   name,
+  context,
   description,
   image,
   link,
@@ -13,65 +15,63 @@ const ProjectItem: React.FC<ProjectInterface> = ({
   tech,
 }) => {
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-rule bg-surface">
-      {/*
-        Screenshots vary between roughly 2.1:1 and 2.25:1, so a fixed ratio
-        both reserves space before load and keeps the three cards aligned.
-      */}
-      <img
-        className="aspect-[16/7] w-full border-b border-rule object-cover"
-        src={image}
-        alt={`${name} screenshot`}
-        loading="lazy"
-      />
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-start gap-x-3">
-          <h3 className="font-display text-lg font-semibold text-accent">
+    <RailRow label={context}>
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+        {/* Screenshots stay subordinate to the writing here, so they sit as a
+            fixed-width thumbnail rather than spanning the column. */}
+        <img
+          className="aspect-[16/10] w-full shrink-0 rounded border border-rule object-cover object-top sm:w-56"
+          src={image}
+          alt={`${name} screenshot`}
+          loading="lazy"
+        />
+        <div className="min-w-0">
+          <h3 className="font-display text-xl font-semibold text-ink">
             {name}
           </h3>
-          <div className="ml-auto flex shrink-0 gap-x-3 pt-1">
-            {github ? (
-              <a
-                href={github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${name} GitHub repository`}
-                className="text-muted transition-colors hover:text-accent"
-              >
-                <GithubIcon size={18} />
-              </a>
-            ) : null}
+          <p className="mt-2 text-body">{description}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
             {link ? (
               <a
                 href={link}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${name} live site`}
-                className="text-muted transition-colors hover:text-accent"
+                className="inline-flex items-center gap-x-2 text-sm text-accent transition-colors hover:text-ink"
               >
-                <ExternalLink size={18} />
+                <ExternalLink size={15} />
+                Visit site
               </a>
             ) : null}
+            {github ? (
+              <a
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-x-2 text-sm text-accent transition-colors hover:text-ink"
+              >
+                <GithubIcon size={15} />
+                Source
+              </a>
+            ) : null}
+            <div className="flex flex-wrap items-center gap-x-3">
+              {tech.map((t) => {
+                const entry = techIcons[t];
+                if (!entry) return null;
+                const Icon = entry.icon;
+                return (
+                  <Icon
+                    key={t}
+                    size={20}
+                    color={entry.color}
+                    title={entry.label}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
-        <p className="mt-2 text-sm text-body">{description}</p>
-        <div className="mt-auto flex flex-wrap gap-4 border-t border-rule pt-4 mt-4">
-          {tech.map((t) => {
-            const entry = techIcons[t];
-            if (!entry) return null;
-            const Icon = entry.icon;
-            return (
-              <Icon
-                key={t}
-                size={26}
-                color={entry.color}
-                title={entry.label}
-              />
-            );
-          })}
-        </div>
       </div>
-    </div>
+    </RailRow>
   );
 };
 export default ProjectItem;
