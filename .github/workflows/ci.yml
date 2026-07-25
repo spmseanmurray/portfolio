@@ -1,0 +1,30 @@
+name: CI
+
+# Render deploys straight off main, so the point of this workflow is to catch a
+# broken build on the pull request rather than after it has already shipped.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # `vite build` strips types without checking them, so a type error would
+      # otherwise sail through the build step below.
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build

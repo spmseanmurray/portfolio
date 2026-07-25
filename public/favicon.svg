@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sean Murray">
+  <!--
+    Built from the site's own contour motif rather than a monogram: three
+    terrain lines on a moss field. Pure geometry, so it renders identically
+    everywhere instead of depending on a serif being installed, and the
+    silhouette survives being shrunk to 16px.
+  -->
+  <defs>
+    <clipPath id="c">
+      <rect width="64" height="64" rx="13" />
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="13" fill="#8C9A6B" />
+  <g clip-path="url(#c)" fill="none" stroke="#16161B" stroke-width="6" stroke-linecap="round">
+    <path d="M-4 19 Q 16 9 32 19 T 68 19" />
+    <path d="M-4 33 Q 16 23 32 33 T 68 33" />
+    <path d="M-4 47 Q 16 37 32 47 T 68 47" />
+  </g>
+</svg>
