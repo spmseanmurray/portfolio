@@ -28,7 +28,7 @@ const About: React.FC = () => {
                 me turn my aerospace roots into a career in software.
               </p>
               <p>
-                Today I'm a Sr. Software Engineer at The Home Depot, where I
+                Today I'm a Senior Software Engineer at The Home Depot, where I
                 work on the retail media platform that powers supplier
                 advertising. Most recently I led the architecture and rollout of
                 a real-time, machine learning-based sponsored product

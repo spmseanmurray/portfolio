@@ -4,6 +4,8 @@ const MOSS = "140, 154, 107";
 const LINES = 16;
 /** Horizontal sampling step. Coarser than it looks — the curves are smooth. */
 const STEP = 6;
+/** Peak vertical excursion of the two sines below, used to inset the field. */
+const AMPLITUDE = 29;
 
 /**
  * Slow-drifting contour lines behind the hero.
@@ -43,15 +45,21 @@ const HeroContours: React.FC = () => {
       ctx.clearRect(0, 0, width, height);
 
       const gradient = ctx.createLinearGradient(0, 0, width, 0);
-      gradient.addColorStop(0, `rgba(${MOSS}, 0.015)`);
-      gradient.addColorStop(0.4, `rgba(${MOSS}, 0.05)`);
-      gradient.addColorStop(1, `rgba(${MOSS}, 0.2)`);
+      gradient.addColorStop(0, `rgba(${MOSS}, 0.05)`);
+      gradient.addColorStop(0.4, `rgba(${MOSS}, 0.14)`);
+      gradient.addColorStop(1, `rgba(${MOSS}, 0.46)`);
       ctx.strokeStyle = gradient;
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 1.1;
+
+      // Inset by the sine amplitude at both ends so the field spans the hero
+      // edge to edge without leaving a gap under the header or running off the
+      // bottom, where curves would be clipped mid-stroke.
+      const first = AMPLITUDE;
+      const last = height - AMPLITUDE;
 
       for (let i = 0; i < LINES; i++) {
-        const base = height * 0.16 + (i / LINES) * height * 0.98;
-        ctx.globalAlpha = 0.35 + 0.65 * (i / LINES);
+        const base = first + (i / (LINES - 1)) * (last - first);
+        ctx.globalAlpha = 0.5 + 0.5 * (i / (LINES - 1));
         ctx.beginPath();
         for (let x = 0; x <= width; x += STEP) {
           const y =
