@@ -9,7 +9,7 @@ import Footer from "./Components/Footer";
 
 const App: React.FC = () => {
   return (
-    <div className="bg-slate-900">
+    <div className="bg-ground">
       <Header />
       <Hero />
       <About />

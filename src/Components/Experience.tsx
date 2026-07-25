@@ -1,24 +1,30 @@
 import React from "react";
+import Section from "./Section";
+import Reveal from "./Reveal";
 import ExperienceItem from "./ExperienceItem";
 import experienceItems from "../config/ExperienceConfig";
 
 const Experience: React.FC = () => {
   return (
-    <div
-      id="experience"
-      className="min-h-screen my-20 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">Experience</div>
-      {experienceItems.map((item) => (
-        <ExperienceItem
-          key={item.company}
-          company={item.company}
-          dates={item.dates}
-          position={item.position}
-          bullets={item.bullets}
-        />
-      ))}
-    </div>
+    <Section id="experience" title="Experience">
+      <div className="divide-y divide-rule">
+        {experienceItems.map((item, index) => (
+          <div
+            key={`${item.company} ${item.dates}`}
+            className="py-8 first:pt-0 last:pb-0"
+          >
+            <Reveal delay={index * 60}>
+              <ExperienceItem
+                company={item.company}
+                dates={item.dates}
+                position={item.position}
+                bullets={item.bullets}
+              />
+            </Reveal>
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 };
 

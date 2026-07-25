@@ -2,10 +2,12 @@ import React from "react";
 import ProjectInterface from "../types/ProjectInterface";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
+import RailRow from "./RailRow";
 import { techIcons } from "./icons/techIcons";
 
 const ProjectItem: React.FC<ProjectInterface> = ({
   name,
+  context,
   description,
   image,
   link,
@@ -13,59 +15,61 @@ const ProjectItem: React.FC<ProjectInterface> = ({
   tech,
 }) => {
   return (
-    <div
-      className="border-slate-600 border-2 rounded-2xl bg-slate-800 my-3 mx-5"
-    >
-      <img
-        className="object-cover rounded-t-2xl border-b-2 border-slate-600"
-        src={image}
-        alt={`${name} screenshot`}
-        loading="lazy"
-      />
-      <div className="justify-start align-center text-slate-200 p-3">
-        <div className="flex text-xl text-sky-300 font-bold gap-x-3">
-          {name}
-          {github ? (
-            <a
-              href={github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={name + " GitHub repository"}
-            >
-              <GithubIcon className="text-slate-200" size={20} />
-            </a>
-          ) : null}
-          {link ? (
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${name} live site`}
-            >
-              <ExternalLink className="text-slate-200" size={20} />
-            </a>
-          ) : null}
-        </div>
-        <div className="text-m lg:min-h-24 xl:min-h-16">{description}</div>
-      </div>
-      <div className="grid grid-cols-3 sm:grid-cols-6 mx-3 py-2 border-t-2 border-slate-600">
-        {tech.map((t) => {
-          const entry = techIcons[t];
-          if (!entry) return null;
-          const Icon = entry.icon;
-          return (
-            <div key={t} className="col-span-1 items-center flex justify-center">
-              <Icon
-                size={40}
-                color={entry.color}
-                className="mb-1"
-                title={entry.label}
-              />
+    <RailRow label={context}>
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+        <img
+          className="aspect-[16/10] w-full shrink-0 rounded border border-rule object-cover object-top sm:w-56"
+          src={image}
+          alt={`${name} screenshot`}
+          loading="lazy"
+        />
+        <div className="min-w-0">
+          <h3 className="font-display text-xl font-semibold text-ink">
+            {name}
+          </h3>
+          <p className="mt-2 text-body">{description}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
+            {link ? (
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-x-2 text-sm text-accent transition-colors hover:text-ink"
+              >
+                <ExternalLink size={15} />
+                Visit site
+              </a>
+            ) : null}
+            {github ? (
+              <a
+                href={github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-x-2 text-sm text-accent transition-colors hover:text-ink"
+              >
+                <GithubIcon size={15} />
+                Source
+              </a>
+            ) : null}
+            <div className="flex flex-wrap items-center gap-x-3">
+              {tech.map((t) => {
+                const entry = techIcons[t];
+                if (!entry) return null;
+                const Icon = entry.icon;
+                return (
+                  <Icon
+                    key={t}
+                    size={20}
+                    color={entry.color}
+                    title={entry.label}
+                  />
+                );
+              })}
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
-    </div>
+    </RailRow>
   );
 };
 export default ProjectItem;

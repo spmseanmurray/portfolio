@@ -1,24 +1,22 @@
 import React from "react";
+import Section from "./Section";
+import Reveal from "./Reveal";
 import SkillItem from "./SkillItem";
 import skillCategories from "../config/SkillConfig";
 
 const Skills: React.FC = () => {
   return (
-    <div
-      id="skills"
-      className="min-h-screen my-20 mx-5 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">Skills</div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-8 mt-4">
-        {skillCategories.map((item) => (
-          <SkillItem
-            key={item.category}
-            category={item.category}
-            skills={item.skills}
-          />
+    <Section id="skills" title="Skills">
+      <div className="divide-y divide-rule">
+        {skillCategories.map((item, index) => (
+          <div key={item.category} className="py-6 first:pt-0 last:pb-0">
+            <Reveal delay={index * 50}>
+              <SkillItem category={item.category} skills={item.skills} />
+            </Reveal>
+          </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 export default Skills;

@@ -1,28 +1,30 @@
 import React from "react";
+import Section from "./Section";
+import Reveal from "./Reveal";
 import ProjectItem from "./ProjectItem";
 import projectItems from "../config/ProjectConfig";
 
 const Projects: React.FC = () => {
   return (
-    <div
-      id="projects"
-      className="min-h-screen my-20 flex flex-col justify-center items-center bg-slate-900"
-    >
-      <div className="text-slate-200 text-3xl font-bold">Projects</div>
-      <div className="flex flex-col lg:flex-row items-center">
-        {projectItems.map((item) => (
-          <ProjectItem
-            key={item.name}
-            name={item.name}
-            description={item.description}
-            image={item.image}
-            link={item.link}
-            github={item.github}
-            tech={item.tech}
-          />
+    <Section id="projects" title="Projects">
+      <div className="divide-y divide-rule">
+        {projectItems.map((item, index) => (
+          <div key={item.name} className="py-8 first:pt-0 last:pb-0">
+            <Reveal delay={index * 60}>
+              <ProjectItem
+                name={item.name}
+                context={item.context}
+                description={item.description}
+                image={item.image}
+                link={item.link}
+                github={item.github}
+                tech={item.tech}
+              />
+            </Reveal>
+          </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 

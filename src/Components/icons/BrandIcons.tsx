@@ -1,8 +1,5 @@
 import React from "react";
 
-// Self-contained brand marks (GitHub, LinkedIn) as inline SVGs. LinkedIn is not
-// available in lucide-react or simple-icons, so we vendor the official paths here.
-// Props mirror lucide-react icons (size + className) so all icons render uniformly.
 type BrandIconProps = {
   size?: number;
   className?: string;
