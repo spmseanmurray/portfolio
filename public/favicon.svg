@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sean Murray">
+  <!--
+    Built from the site's own contour motif rather than a monogram: three
+    terrain lines on a moss field. Pure geometry, so it renders identically
+    everywhere instead of depending on a serif being installed.
+
+    The summit is a corner, not a curve, and it sits off-centre at x~22 with
+    a steep left face and a long right shoulder. That asymmetry is the whole
+    point: evenly spaced symmetric waves flatten out at 16px and read as
+    three parallel bars, which is a hamburger menu rather than a mark. The
+    apexes also drop and blunt as they descend, the way a cone's contours do.
+
+    stroke-linejoin must stay `round` — the apex is a path corner, and a
+    miter join spikes it at large sizes.
+  -->
+  <defs>
+    <clipPath id="c">
+      <rect width="64" height="64" rx="13" />
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="13" fill="#8C9A6B" />
+  <g clip-path="url(#c)" fill="none" stroke="#16161B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-4 32 C 7 31 14 24 24 11 C 30 18 40 22 68 25" />
+    <path d="M-4 45 C 7 44 12 37 22 25 C 31 32 42 37 68 40" />
+    <path d="M-4 58 C 6 57 11 51 20 40 C 32 48 44 53 68 56" />
+  </g>
+</svg>
