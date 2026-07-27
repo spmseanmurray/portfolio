@@ -10,20 +10,18 @@
  * Neutrals are a near-neutral graphite so the moss accent carries the only
  * real hue on the page.
  *
- * Three things keep the page from reading as one flat dark mass:
+ * Two things keep the page from reading as one flat dark mass:
  *   - the ground sits at roughly the luminance of the site it replaces,
  *     rather than well below it;
- *   - `surface` clears the ground by ~1.20, so cards read as panels;
  *   - prose uses `body`, not `muted`. `muted` is for metadata only --
  *     setting paragraphs in it dims the actual content of the page.
  *
- * Contrast on ground / on surface:
- *   ink 15.97 / 13.27 · body 12.65 / 10.51 · muted 7.10 / 5.90
- *   faint 5.91 / 4.91 · accent 5.97 / 4.96   (all AA)
+ * Contrast on ground:
+ *   ink 15.97 · body 12.65 · muted 7.10
+ *   faint 5.91 · accent 5.97   (all AA)
  */
 @theme {
   --color-ground: #16161b;
-  --color-surface: #262630;
   --color-rule: #3a3a46;
   --color-ink: #f2f1ef;
   --color-body: #d9d8d5;
@@ -59,6 +57,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

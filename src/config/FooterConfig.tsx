@@ -4,17 +4,17 @@ import { GithubIcon, LinkedinIcon } from "../Components/icons/BrandIcons";
 
 const footerItems: FooterInterface[] = [
   {
-    name: "email",
+    name: "Email",
     link: "mailto:spmseanmurray@gmail.com",
     icon: Mail,
   },
   {
-    name: "linkedin",
+    name: "LinkedIn",
     link: "https://www.linkedin.com/in/spmseanmurray/",
     icon: LinkedinIcon,
   },
   {
-    name: "github",
+    name: "GitHub",
     link: "https://github.com/spmseanmurray",
     icon: GithubIcon,
   },

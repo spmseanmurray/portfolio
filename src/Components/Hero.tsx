@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import HeroContours from "./HeroContours";
 
 const Hero: React.FC = () => {
+  const staggerRef = useRef<HTMLDivElement>(null);
+
+  // CSS sets opacity: 0 inside prefers-reduced-motion: no-preference and
+  // relies on the animation to reveal it. If the animation never runs
+  // (headless renderer, broken compositor) the hero stays invisible. This
+  // mirrors Reveal's fail-safe: force visibility after a beat.
+  useEffect(() => {
+    const node = staggerRef.current;
+    if (!node) return;
+    const timer = window.setTimeout(() => {
+      for (const child of Array.from(node.children)) {
+        (child as HTMLElement).style.opacity = "1";
+      }
+    }, 1200);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <div
       id="top"
-      className="relative flex min-h-svh items-center overflow-hidden bg-ground px-5 py-24"
+      className="relative flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden bg-ground px-5 py-24"
     >
       <HeroContours />
-      <div className="hero-stagger relative mx-auto w-full max-w-6xl">
+      <div
+        ref={staggerRef}
+        className="hero-stagger relative mx-auto w-full max-w-6xl"
+      >
         <h1 className="font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl xl:text-7xl">
           Sean Murray
         </h1>

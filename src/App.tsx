@@ -10,12 +10,20 @@ import Footer from "./Components/Footer";
 const App: React.FC = () => {
   return (
     <div className="bg-ground">
+      <a
+        href="#about"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-16 focus:z-30 focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-accent"
+      >
+        Skip to content
+      </a>
       <Header />
       <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
+      <main>
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+      </main>
       <Footer />
     </div>
   );
