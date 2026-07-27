@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import headerItems from "../config/HeaderConfig";
+import headerItems, { contactItem } from "../config/HeaderConfig";
 
 const Header: React.FC = () => {
   const [activeId, setActiveId] = useState<string>("");
@@ -116,6 +116,15 @@ const Header: React.FC = () => {
                 </a>
               );
             })}
+
+            {/* Underlined rather than merely coloured: the active section link
+                is also accent, so colour alone wouldn't tell them apart. */}
+            <a
+              href={contactItem.link}
+              className="border-b border-accent pb-0.5 text-sm text-accent transition-colors hover:text-ink"
+            >
+              {contactItem.name}
+            </a>
           </div>
 
           <button
@@ -149,6 +158,14 @@ const Header: React.FC = () => {
                 {item.name}
               </a>
             ))}
+
+            <a
+              href={contactItem.link}
+              onClick={closeMenu}
+              className="mt-2 self-start border-b border-accent pb-0.5 text-sm text-accent transition-colors hover:text-ink"
+            >
+              {contactItem.name}
+            </a>
           </div>
         ) : null}
       </nav>

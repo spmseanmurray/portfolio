@@ -13,7 +13,7 @@ import footerItems, { contact } from "../config/FooterConfig";
  */
 const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-rule bg-ground">
+    <footer id="contact" className="border-t border-rule bg-ground">
       <div className="mx-auto w-full max-w-6xl px-5 py-11">
         <RailRow label="Contact">
           <div className="flex flex-col items-start gap-y-4">
