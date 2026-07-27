@@ -2,11 +2,11 @@ import React from "react";
 import FooterInterface from "../types/FooterInterface";
 
 const FooterItem: React.FC<FooterInterface> = ({ name, link, icon: Icon }) => {
+  const isExternal = link.startsWith("http");
   return (
     <a
       href={link}
-      target="_blank"
-      rel="noreferrer"
+      {...(isExternal ? { target: "_blank", rel: "noreferrer" } : {})}
       aria-label={name}
       className="text-muted transition-colors hover:text-accent"
     >

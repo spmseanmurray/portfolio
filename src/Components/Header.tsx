@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import headerItems from "../config/HeaderConfig";
 
 const Header: React.FC = () => {
   const [activeId, setActiveId] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   // Highlight the section the reader is currently in.
   //
@@ -56,6 +60,35 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeMenu();
+        buttonRef.current?.focus();
+      }
+    };
+
+    const onClickOutside = (e: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target as Node)
+      ) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onClickOutside);
+    };
+  }, [menuOpen, closeMenu]);
+
   return (
     <header className="sticky top-0 z-20 border-b border-rule bg-ground/90 backdrop-blur">
       <nav className="mx-auto w-full max-w-6xl px-5">
@@ -86,23 +119,29 @@ const Header: React.FC = () => {
           </div>
 
           <button
+            ref={buttonRef}
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="text-muted transition-colors hover:text-accent sm:hidden"
+            className="flex h-10 w-10 items-center justify-center text-muted transition-colors hover:text-accent sm:hidden"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
         {menuOpen ? (
-          <div className="flex flex-col gap-y-1 border-t border-rule py-3 sm:hidden">
+          <div
+            ref={menuRef}
+            id="mobile-menu"
+            className="flex flex-col gap-y-1 border-t border-rule py-3 sm:hidden"
+          >
             {headerItems.map((item) => (
               <a
                 key={item.name}
                 href={item.link}
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className={`py-1.5 text-sm transition-colors hover:text-accent ${
                   item.link === `#${activeId}` ? "text-accent" : "text-muted"
                 }`}

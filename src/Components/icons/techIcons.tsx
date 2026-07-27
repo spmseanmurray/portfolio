@@ -75,12 +75,12 @@ export type TechIcon = {
 };
 
 // Some brand colors (Express, GitHub Copilot) are near-black and disappear
-// against the dark card background, so any mark whose contrast against the
-// card surface is too low falls back to the page's ink tone.
-// Keep these in sync with --color-surface and --color-ink in index.css.
-const CARD_BG = "#262630";
+// against the dark ground, so any mark whose contrast is too low falls back
+// to the page's ink tone.
+// Keep these in sync with --color-ground and --color-ink in index.css.
+const PAGE_BG = "#16161b";
 const DARK_FALLBACK = "#f2f1ef";
-const MIN_CONTRAST = 2;
+const MIN_CONTRAST = 3;
 
 function luminance(hex: string): number {
   const c = hex.replace("#", "");
@@ -93,7 +93,7 @@ function luminance(hex: string): number {
 
 function readableColor(hex: string): string {
   const a = luminance(hex);
-  const b = luminance(CARD_BG);
+  const b = luminance(PAGE_BG);
   const contrast = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
   return contrast < MIN_CONTRAST ? DARK_FALLBACK : hex;
 }

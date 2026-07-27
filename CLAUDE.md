@@ -26,7 +26,6 @@ gone).
 | Token | Value | Use |
 | --- | --- | --- |
 | `ground` | `#16161b` | Page background |
-| `surface` | `#262630` | Raised panels |
 | `rule` | `#3a3a46` | Hairlines and borders |
 | `ink` | `#f2f1ef` | Headings and emphasis |
 | `body` | `#d9d8d5` | **Prose** |
@@ -39,11 +38,9 @@ Rules that are easy to get wrong:
 - **Prose uses `body`, not `muted`.** `muted` is for metadata only. Setting
   paragraphs in it dims the actual content of the page — this happened once and
   made the whole site read as a flat dark mass.
-- **`surface` must clear `ground` by roughly 1.20** in contrast ratio, or panels
-  dissolve into the background and the page looks flat.
-- Every text token clears **WCAG AA against both `ground` and `surface`**. If you
-  change one, re-measure rather than assuming — including against any
-  decorative layer drawn behind it.
+- Every text token clears **WCAG AA against `ground`**. If you change one,
+  re-measure rather than assuming — including against any decorative layer
+  drawn behind it.
 - Moss is the only hue. Don't introduce a second accent for a one-off need.
 
 ## Motion
@@ -51,11 +48,14 @@ Rules that are easy to get wrong:
 Motion is additive and never load-bearing. Two invariants:
 
 1. **Never gate visible output on a callback that might not fire.** `Reveal` has
-   an unconditional fail-safe timer, and `HeroContours` paints an initial frame
-   before its observer starts. Renderers that never deliver
-   `IntersectionObserver` or `requestAnimationFrame` callbacks — crawlers,
-   link-preview bots, headless browsers — would otherwise get a blank page. This
-   mistake has been made three times in this repo; check for it in review.
+   an unconditional fail-safe timer, `Hero` has a JS fail-safe that forces
+   opacity after 1.2 s (the CSS entrance sets `opacity: 0` inside a
+   `prefers-reduced-motion: no-preference` block, which never animates in some
+   renderers), and `HeroContours` paints an initial frame before its observer
+   starts. Renderers that never deliver `IntersectionObserver` or
+   `requestAnimationFrame` callbacks — crawlers, link-preview bots, headless
+   browsers — would otherwise get a blank page. This mistake has been made
+   three times in this repo; check for it in review.
 2. **Hide things only inside `prefers-reduced-motion: no-preference`.** The hero
    entrance sets `opacity: 0` *within* that query rather than undoing it under
    `reduce`. Written the other way round, reduced-motion users are left staring

@@ -51,18 +51,21 @@ const ProjectItem: React.FC<ProjectInterface> = ({
                 Source
               </a>
             ) : null}
-            <div className="flex flex-wrap items-center gap-x-3">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               {tech.map((t) => {
                 const entry = techIcons[t];
                 if (!entry) return null;
                 const Icon = entry.icon;
                 return (
-                  <Icon
+                  <span
                     key={t}
-                    size={20}
-                    color={entry.color}
-                    title={entry.label}
-                  />
+                    className="inline-flex items-center gap-x-1.5 text-xs text-muted"
+                  >
+                    <span aria-hidden="true">
+                      <Icon size={16} color={entry.color} />
+                    </span>
+                    {entry.label}
+                  </span>
                 );
               })}
             </div>
