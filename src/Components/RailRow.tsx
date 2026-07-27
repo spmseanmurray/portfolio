@@ -17,7 +17,7 @@ interface RailRowProps {
 const RailRow: React.FC<RailRowProps> = ({ label, sublabel, children }) => {
   return (
     <div className="grid gap-x-10 gap-y-2 md:grid-cols-[10.5rem_1fr]">
-      <div className="pt-1 text-xs uppercase tracking-[0.14em] text-accent tabular-nums">
+      <div className="pt-1 text-xs uppercase tracking-[0.14em] text-accent tabular-nums md:min-h-9">
         {label}
         {sublabel ? (
           <span className="mt-1 block tracking-[0.06em] text-muted">

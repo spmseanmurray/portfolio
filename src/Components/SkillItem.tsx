@@ -6,7 +6,7 @@ import { techIcons } from "./icons/techIcons";
 const SkillItem: React.FC<SkillInterface> = ({ category, skills }) => {
   return (
     <RailRow label={category}>
-      <div className="flex flex-wrap gap-x-6 gap-y-4">
+      <div className="flex h-full flex-wrap content-center items-center gap-x-6 gap-y-4">
         {skills.map((skill) => {
           const entry = techIcons[skill];
           if (!entry) return null;
