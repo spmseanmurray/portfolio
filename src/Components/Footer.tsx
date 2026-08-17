@@ -6,11 +6,6 @@ import { trackEvent } from "../utils/analytics";
 
 /**
  * The page's closing rail row.
- *
- * Built on `RailRow` rather than its own layout on purpose: dates, employers
- * and skill categories all hang off the same spine, so ending on one more rail
- * row makes the footer read as the last row of the page rather than a separate
- * object bolted underneath it.
  */
 const Footer: React.FC = () => {
   return (
@@ -18,10 +13,6 @@ const Footer: React.FC = () => {
       <div className="mx-auto w-full max-w-6xl px-5 py-11">
         <RailRow label="Contact">
           <div className="flex flex-col items-start gap-y-4">
-            {/* GA4's enhanced measurement covers outbound clicks and file
-                downloads, which between them already catch GitHub, LinkedIn
-                and the resume. It ignores `mailto:`, so the highest-intent
-                action on the page is the one thing it needs told about. */}
             <a
               href={`mailto:${contact.email}`}
               onClick={() => trackEvent("contact_email_click")}

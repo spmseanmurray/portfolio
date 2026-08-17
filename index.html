@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -57,10 +57,6 @@
       name="twitter:image"
       content="https://www.spmseanmurray.com/og-image.png"
     />
-
-    <!-- GA4. Guarded to the canonical host: without it, every `npm run dev`
-         reload lands in the property, and at this traffic level local hits
-         would outnumber real ones. -->
     <script>
       if (location.hostname === "www.spmseanmurray.com") {
         window.dataLayer = window.dataLayer || [];
