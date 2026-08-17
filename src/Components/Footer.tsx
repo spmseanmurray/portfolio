@@ -2,6 +2,7 @@ import React from "react";
 import FooterItem from "./FooterItem";
 import RailRow from "./RailRow";
 import footerItems, { contact } from "../config/FooterConfig";
+import { trackEvent } from "../utils/analytics";
 
 /**
  * The page's closing rail row.
@@ -17,8 +18,13 @@ const Footer: React.FC = () => {
       <div className="mx-auto w-full max-w-6xl px-5 py-11">
         <RailRow label="Contact">
           <div className="flex flex-col items-start gap-y-4">
+            {/* GA4's enhanced measurement covers outbound clicks and file
+                downloads, which between them already catch GitHub, LinkedIn
+                and the resume. It ignores `mailto:`, so the highest-intent
+                action on the page is the one thing it needs told about. */}
             <a
               href={`mailto:${contact.email}`}
+              onClick={() => trackEvent("contact_email_click")}
               className="border-b border-rule pb-0.5 font-display text-xl font-semibold tracking-tight text-accent transition-colors hover:text-ink sm:text-2xl"
             >
               {contact.email}

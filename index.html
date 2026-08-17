@@ -58,6 +58,24 @@
       content="https://www.spmseanmurray.com/og-image.png"
     />
 
+    <!-- GA4. Guarded to the canonical host: without it, every `npm run dev`
+         reload lands in the property, and at this traffic level local hits
+         would outnumber real ones. -->
+    <script>
+      if (location.hostname === "www.spmseanmurray.com") {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          dataLayer.push(arguments);
+        };
+        gtag("js", new Date());
+        gtag("config", "G-LQ9TGSSBD9");
+        var tag = document.createElement("script");
+        tag.async = true;
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=G-LQ9TGSSBD9";
+        document.head.appendChild(tag);
+      }
+    </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
