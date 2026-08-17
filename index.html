@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -57,6 +57,20 @@
       name="twitter:image"
       content="https://www.spmseanmurray.com/og-image.png"
     />
+    <script>
+      if (location.hostname === "www.spmseanmurray.com") {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          dataLayer.push(arguments);
+        };
+        gtag("js", new Date());
+        gtag("config", "G-LQ9TGSSBD9");
+        var tag = document.createElement("script");
+        tag.async = true;
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=G-LQ9TGSSBD9";
+        document.head.appendChild(tag);
+      }
+    </script>
 
     <script type="application/ld+json">
       {
